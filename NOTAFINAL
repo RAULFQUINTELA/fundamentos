@@ -1,0 +1,46 @@
+PSelnt:
+Algoritmo CalculoNotaFinal
+	Escribir 'Ingresar primer parcial'
+	Leer parcial1
+	Escribir 'Ingresar segundo parcial'
+	Leer parcial2
+	Escribir 'Ingresar tercer parcial'
+	Leer parcial3
+	Escribir 'Ingresar examen final'
+	Leer examenfinal
+	Escribir 'Ingresar proyecto final'
+	Leer proyectofinal
+	Notafinal <- ((parcial1+parcial2+parcial3)/3)*0.4+examenfinal*0.4+proyectofinal*0.2
+	Escribir 'La nota final es:',Notafinal
+	Si Notafinal>=51 Entonces
+		Escribir "Esta aprobado"
+	SiNo
+		Escribir "Esta reprobado"
+	FinSi
+FinAlgoritmo
+
+C++:
+#include <iostream>
+using namespace std;
+int main()
+{
+    float Nota_examen_parcial_1,Nota_examen_parcial_2,Nota_examen_parcial_3,Nota_examen_final,Nota_proyecto,Nota_final;
+    cout<<"Nota_examen_final:";
+    cout<<"Nota_examen_parcial_1:";
+    cin>>Nota_examen_parcial_1;
+    cout<<"Nota_examen_parcial_2:";
+    cin>>Nota_examen_parcial_2;
+    cout<<"Nota_examen_parcial_3:";
+    cin>>Nota_examen_parcial_3;
+    cout<<"Nota_examen_final:";
+    cin>>Nota_examen_final;
+    cout<<"Nota_proyecto:";
+    cin>>Nota_proyecto;
+    Nota_final=(((Nota_examen_parcial_1+Nota_examen_parcial_2+Nota_examen_parcial_3)/3)*0.40)+(Nota_examen_final*0.40)+(Nota_proyecto*0.20);
+    cout<<"La nota final es:"<<Nota_final;
+    if(Nota_final>=51)
+     cout<<"Esta aprobado";
+   else
+   cout<<"Reprobo la materia";
+    return 0;
+}
