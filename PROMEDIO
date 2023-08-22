@@ -1,0 +1,40 @@
+PSelnt
+Algoritmo Promedios
+	Escribir "Ingresar el numero 1:"
+	Leer numero1
+	Escribir "Ingresar numero 2:"
+	Leer numero2
+	promedio <- numero1+numero2
+	Escribir "Ingresar numero 3:"
+	Leer numero1
+	Escribir "Ingresar el numero 4:"
+	Leer numero2
+	promedio <- promedio+numero1+numero2
+	Escribir "Ingresar el numero 5:"
+	Leer numero1
+	promedio <- promedio+numero1
+	Escribir "El promedio es:",promedio/5
+FinAlgoritmo
+
+C++
+#include <iostream>
+using namespace std;
+int main()
+{
+    float numero1,numero2,promedio;
+ cout<<"Ingresar el numero 1:";
+ cin>>numero1;
+ cout<<"Ingresar el numero 2:";
+ cin>>numero2;
+ promedio=numero1+numero2;
+ cout<<"Ingresar el numero 3:";
+ cin>>numero1;
+ cout<<"Ingresar el numero 4:";
+ cin>>numero2;
+ promedio=promedio+numero1+numero2;
+ cout<<"Ingresar el numero 5:";
+ cin>>numero1;
+ promedio=promedio+numero1;
+ cout<<"El promedio es:"<<promedio/5;
+    return 0;
+}
