@@ -1,0 +1,25 @@
+PSelnt
+Algoritmo Condicionalsimple
+	Escribir "Ingrese el numero de creditos:"
+	Leer creditos
+	Si creditos>60 Entonces
+		Escribir "No puede inscribir más materias"
+	SiNo
+		Escribir "Puedes inscribirte"
+	FinSi
+FinAlgoritmo
+
+C+++
+#include <iostream>
+using namespace std;
+int main()
+{
+   float creditos;
+   cout<<"Ingresar numero de creditos:";
+   cin>>creditos;
+   if (creditos>60)
+   cout<<"No puede inscribir mas materias:";
+   else
+   cout<<"Puedes inscribirte";
+    return 0;
+}
