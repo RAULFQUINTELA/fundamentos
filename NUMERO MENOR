@@ -1,0 +1,80 @@
+C++:
+EJERCICIO 1:
+/* Un progrma que permita ingresar 3 numeros por teclado y determine cual es el menor*/
+#include <iostream>
+using namespace std;
+int main()
+{
+    float Numero_1,Numero_2,Numero_3;//Variables de entrada
+    float menor;//Variable de salida
+    cout<<"PROGRAMA QUE DETERMINA EL MENOR DE TRES NUMEROS"<<endl<<endl;
+    cout<<"Ingresar los tres valores a operar"<<endl;
+    cin>>Numero_1;//cin>>Numero_1>>Numero_2>>Numero_3;
+    cin>>Numero_2;
+    cin>>Numero_3;
+    if (Numero_1<Numero_2 && Numero_1<Numero_3)
+    {
+        menor=Numero_1;
+    }
+    else
+    {
+        if(Numero_2<=Numero_1 && Numero_2<=Numero_3)
+        {
+            menor=Numero_2;
+        }
+        else
+        {
+            if(Numero_3<=Numero_1 && Numero_3<=Numero_2)
+            {
+                menor=Numero_3;
+            }
+        
+        }
+    }
+    cout<<"Ingreso los siguientes valores:"<<Numero_1<<"---"<<Numero_2<<"---"<<Numero_3<<endl;
+    cout<<"El menor de los numeros ingresados es:"<<menor<<endl;
+    
+    return 0;
+}
+EJERCICIO 2:
+/* Un progrma que permita ingresar 3 numeros por teclado y determine cual es el menor y cual el mayor*/
+#include <iostream>
+using namespace std;
+int main()
+{
+    float Numero_1,Numero_2,Numero_3;//Variables de entrada
+    float menor,mayor;//Variable de salida
+    cout<<"PROGRAMA QUE DETERMINA EL MENOR DE TRES NUMEROS"<<endl<<endl;
+    cout<<"Ingresar los tres valores a operar"<<endl;
+    cin>>Numero_1;//cin>>Numero_1>>Numero_2>>Numero_3;
+    cin>>Numero_2;
+    cin>>Numero_3;
+    if (Numero_1<=Numero_2 && Numero_1<=Numero_3 && Numero_2<=Numero_3)
+    {
+        menor=Numero_1;
+        mayor=Numero_3;
+    }
+    else
+    {
+        if(Numero_2<=Numero_1 && Numero_2<=Numero_3 && Numero_1<=Numero_3)
+        {
+            menor=Numero_2;
+            mayor=Numero_3;
+        }
+        else
+        {
+            if(Numero_3<=Numero_1 && Numero_3<=Numero_2 && Numero_1<=Numero_2)
+            {
+                menor=Numero_3;
+                mayor=Numero_2;
+            
+            }
+        }
+    }
+  
+    cout<<"Ingreso los siguientes valores:"<<Numero_1<<"---"<<Numero_2<<"---"<<Numero_3<<endl;
+    cout<<"El menor de los numeros ingresados es:"<<menor<<endl;
+    cout<<"El mayor de los numeros ingresados es:"<<mayor<<endl;
+    
+    return 0;
+}
