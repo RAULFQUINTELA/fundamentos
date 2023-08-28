@@ -162,3 +162,73 @@ int main()
 }
 
 EJERCICIO 6:
+Construir un programa que permita convertir una hora dada en formato de 24 horas (hora, minuto, segundo)
+a su equivalente en formato de 12 horas (AM o PM). Por ejemplo si se introduce 14, 45, 10 (formato de 24 horas), 
+debe imprimirse 2, 45, 10 PM (formato 12 horas).
+
+
+
+
+
+EJERCICIO 7:
+Calcular el interés compuesto I que ganará un capital C en un periodo de N años, conociendo que la tasa de interés es T.
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    float InteresCompuesto,C,N,T;
+     cout<<"Ingresar el capital inicial: ";
+     cin>>C;
+     cout<<"Ingresar el numero de años: ";
+     cin>>N;
+     cout<<"Ingresar la tasa de interes (%): ";
+     cin>>T;
+     InteresCompuesto=C*pow(1+(T/100),N);
+     
+     cout<<"El interes compuesto es:"<<InteresCompuesto<<endl;
+
+    return 0;
+}
+
+EJERCICIO 8:
+8.	Calcule la solución de un sistema de dos ecuaciones con 2 variables de la forma:
+Ax + By = C 
+Dx + Ey = F 
+El algoritmo debe leer como entrada los 6 coeficientes de la ecuación, y dar como salida la solución X, Y, 
+considerando todos los tipos de solución posibles para todos los valores.
+
+
+
+
+
+
+
+EJERCICIO 9:
+Construir un algoritmo que lea una cantidad de SEGUNDOS y los convierta en HORAS, MINUTOS Y SEGUNDOS 
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int Horas,Minutos,Segundos,S,Segundos_restantes;
+     cout<<"Ingresar la cantidad de segundos: ";
+     cin>>S;
+     Horas=S/3600;
+     Segundos_restantes=S % 3600;
+     Minutos=Segundos_restantes/60;
+     Segundos=Segundos_restantes % 60;
+     
+cout<<"Hora: "<<Horas<<endl;
+cout<<"Minutos: "<<Minutos<<endl;
+cout<<"Segundos: "<<Segundos<<endl;
+
+    return 0;
+}
+
+EJERCICIO 10:
+Construir un algoritmo que lea dos horas del mismo día y halle la diferencia entre ellas. 
+El ingreso de las horas debe ser en formato de 24 horas: HH, MM, SS, como así también la diferencia.
+
