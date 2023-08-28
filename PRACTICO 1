@@ -1,3 +1,164 @@
-EJERCICIO 1 - C++:
+EJERCICIO 1:
 Construir un algoritmo en lenguaje natural para cada uno de los siguientes problemas.
+
 a)	Conducir un vehículo
+1. Iniciar el motor y poner en marcha el vehículo:
+* Ingresa al vehículo y asegúrate de que esté en modo de estacionamiento (P).
+* Inserta la llave o presiona el botón de encendido para encender el motor.
+* Cambia la palanca de cambios a "Drive" (D) si estás utilizando una transmisión automática o suelta el embrague si es un vehículo con transmisión manual.
+* Presiona el pedal del freno y, si es necesario, desactiva el freno de estacionamiento.
+2. Control de dirección y velocidad:
+* Coloca tus manos en el volante y tus pies en los pedales (acelerador, freno y, si es necesario, el embrague).
+* Gira el volante en la dirección en la que deseas que el vehículo se mueva.
+* Presiona el pedal del acelerador para aumentar la velocidad y el pedal del freno para reducir la velocidad o detener el vehículo.
+* Mantén una distancia segura con los vehículos que te rodean y sigue las señales de tráfico.
+3. Giro y cambio de carril:
+* Activa la señal de giro hacia la dirección a la que planeas moverte.
+* Verifica los espejos retrovisores y los puntos ciegos antes de cambiar de carril.
+* Gira el volante suavemente para realizar el giro o cambio de carril y luego endereza el volante.
+4. Estacionamiento y detención:
+* Activa la señal de giro hacia la dirección en la que te propones estacionarte.
+* Busca un espacio de estacionamiento adecuado y reduce la velocidad.
+* Gira el volante y maniobra el vehículo para ingresar al espacio de estacionamiento, utilizando retrovisores y cámara de reversa si están disponibles.
+5. Detener el vehículo:
+* Reduce gradualmente la velocidad mientras te acercas a tu destino.
+* Presiona el pedal del freno suavemente para detener el vehículo completamente.
+* Cambia la palanca de cambios a "Parking" (P) y apaga el motor.
+* Asegúrate de que el freno de estacionamiento esté activado antes de salir del vehículo.
+
+b) Realizar una llamada telefónica:
+1. Desbloquear el teléfono y acceder a la pantalla de inicio:
+* Enciende el teléfono presionando el botón de encendido o desbloquéalo usando tu huella digital, reconocimiento facial o código PIN.
+2. Abrir la aplicación de teléfono:
+* Busca y toca el icono de la aplicación de teléfono en la pantalla de inicio.
+3. Seleccionar el contacto o marcar el número:
+* Busca el contacto en la lista de contactos y tócalo para llamar, o
+* Toca el campo numérico e ingresa el número de teléfono que deseas marcar.
+4. Iniciar la llamada:
+* Toca el botón de llamada (generalmente un ícono de teléfono en verde) para iniciar la llamada.
+5. Hablar y finalizar la llamada:
+* Espera a que la otra persona responda.
+* Mantén el teléfono cerca de tu oído y habla normalmente.
+* Cuando desees finalizar la llamada, toca el botón de finalización de llamada (generalmente un ícono rojo con un teléfono).
+
+c) Resolver la ecuación cuadrática:
+1. Entender la forma de la ecuación cuadrática:
+* Reconoce la ecuación cuadrática en la forma estándar: ax² + bx + c = 0, donde a, b y c son coeficientes conocidos y a no es igual a cero.
+2. Identificar los coeficientes a, b y c:
+* Identifica los valores de los coeficientes a, b y c de la ecuación dada.
+3. Calcular el discriminante (Δ):
+* Calcula el valor del discriminante utilizando la fórmula Δ = b² - 4ac.
+4. Determinar la naturaleza de las soluciones:
+* Si Δ > 0, la ecuación tiene dos soluciones reales y diferentes.
+* Si Δ = 0, la ecuación tiene una solución real doble.
+* Si Δ < 0, la ecuación tiene dos soluciones complejas conjugadas.
+5. Calcular las soluciones:
+* Si la ecuación tiene soluciones reales, utiliza la fórmula de la ecuación cuadrática para calcular las soluciones x₁ y x₂: x = (-b ± √Δ) / 2a.
+6. Presentar las soluciones:
+* Proporciona las soluciones calculadas en función de los coeficientes a, b y c.
+
+EJERCICIO2:
+Calcular la circunferencia, el área y el volumen de una esfera, si se conoce como dato el diámetro D.
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    float pi,diametro,circunferencia,volumen,area,radio;
+    pi=3.1416;
+    cout<<"Calculador de la circunferencia, el área y el volumen de una esfera";
+    cout<<"Introduzca el diametro:";
+    cin>>diametro;
+        radio=diametro/2;
+        circunferencia=2*pi*radio;
+        area=4*pi*radio*radio;
+        volumen=1.33333333*pi*radio*radio*radio;
+    cout<<"El radio es:"<<radio<<endl;
+    cout<<"La circunferencia es:"<<circunferencia<<endl;
+    cout<<"El volumen es:"<<volumen<<endl;
+    cout<<"El area es:"<<area<<endl;
+    return 0;
+}
+
+EJERCICIO 3:
+Construir un algoritmo para calcular la nota de final de un alumno sabiendo que rindió 3 exámenes parciales ponderados como 40 puntos,
+un examen final de 40 puntos, un proyecto final de 20 puntos.  La nota final es la suma de los tres conceptos.
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    float Nota_examen_parcial_1,Nota_examen_parcial_2,Nota_examen_parcial_3,Nota_examen_final,Nota_proyecto,Nota_final;
+    cout<<"Nota_examen_final:";
+    cout<<"Nota_examen_parcial_1:";
+    cin>>Nota_examen_parcial_1;
+    cout<<"Nota_examen_parcial_2:";
+    cin>>Nota_examen_parcial_2;
+    cout<<"Nota_examen_parcial_3:";
+    cin>>Nota_examen_parcial_3;
+    cout<<"Nota_examen_final:";
+    cin>>Nota_examen_final;
+    cout<<"Nota_proyecto:";
+    cin>>Nota_proyecto;
+    Nota_final=(((Nota_examen_parcial_1+Nota_examen_parcial_2+Nota_examen_parcial_3)/3)*0.40)+(Nota_examen_final*0.40)+(Nota_proyecto*0.20);
+    cout<<"La nota final es:"<<Nota_final;
+    return 0;
+}
+
+EJERCICIO 4:
+Deducir el salario neto de un trabajador a partir de la lectura del nombre, horas trabajadas al mes, precio por hora,
+sabiendo que todo lo que se descuenta es un impuesto  RC-IVA de 13% sobre el salario bruto. Los trabajadores que  ganan más de 8.272 bolivianos 
+están obligados a  pagar el impuesto al Régimen Complementario al Impuesto al Valor Agregado (RC-IVA)
+
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+    string nombre_del_trabajador;
+    float horas_trabajadas,precio_hora,salariobruto,impuestoRCIVA,salarioNeto;
+    cout<<"Ingrese el nombre del trabajador:";
+    getline(cin,nombre_del_trabajador);
+    cout<<"Ingrese las horas que trabaja al mes:";
+    cin>>horas_trabajadas;
+    cout<<"Ingrese el precio por hora:";
+    cin>>precio_hora;
+    salariobruto=horas_trabajadas*precio_hora;
+   if(salariobruto>8272)
+   {
+       impuestoRCIVA=0.13*salariobruto;
+   }
+   else
+   impuestoRCIVA=0;
+
+    salarioNeto=salariobruto-impuestoRCIVA;
+    
+    cout<<"Resumen de pago para"<<nombre_del_trabajador<<":"<<endl;
+    cout<<"Salario bruto:"<<salariobruto<<" Bolivianos"<<endl;
+    cout<<"ImpuestoRCIVA:"<<impuestoRCIVA<<" Bolivianos"<<endl;
+    cout<<"Salario neto:"<<salarioNeto<<" Bolivianos"<<endl;
+    
+    return 0;
+}
+
+EJERCICIO 5:
+Calcular el interés  simple  que ganará un capital C en un periodo de N años, conociendo que la tasa de interés es T. 
+Suponer que el interés es pagadero por cada año y no es capitalizable.
+#include <iostream>
+using namespace std;
+int main()
+{
+ float C,N,T,InteresSimple,MontoTotal;
+ cout<<"Ingresar el capital inicial: ";
+ cin>>C;
+ cout<<"Ingresar el numero de años: ";
+ cin>>N;
+ cout<<"Ingresar la tasa de interes: ";
+ cin>>T;
+ InteresSimple=C*N*(T/100);
+ MontoTotal=C+InteresSimple;
+ cout<<"Interes simple:"<<InteresSimple<<endl;
+ cout<<"Monto total:"<<MontoTotal<<endl;
+}
+
+EJERCICIO 6:
