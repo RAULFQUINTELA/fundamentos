@@ -170,6 +170,8 @@ debe imprimirse 2, 45, 10 PM (formato 12 horas).
 
 
 
+
+
 EJERCICIO 7:
 Calcular el interés compuesto I que ganará un capital C en un periodo de N años, conociendo que la tasa de interés es T.
 #include <iostream>
@@ -193,11 +195,13 @@ int main()
 }
 
 EJERCICIO 8:
-8.	Calcule la solución de un sistema de dos ecuaciones con 2 variables de la forma:
+Calcule la solución de un sistema de dos ecuaciones con 2 variables de la forma:
 Ax + By = C 
 Dx + Ey = F 
 El algoritmo debe leer como entrada los 6 coeficientes de la ecuación, y dar como salida la solución X, Y, 
 considerando todos los tipos de solución posibles para todos los valores.
+
+
 
 
 
@@ -232,3 +236,90 @@ EJERCICIO 10:
 Construir un algoritmo que lea dos horas del mismo día y halle la diferencia entre ellas. 
 El ingreso de las horas debe ser en formato de 24 horas: HH, MM, SS, como así también la diferencia.
 
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int hora1,minutos1,segundos1,hora2,minutos2,segundos2,horaenseg1,horaenseg2,diferencia,horas,minutos,segundos;
+    cout<<"Ingrese la hora inicial: ";
+    cin>>hora1;
+    cout<<"Ingrese los minutos de la hora inicial: ";
+    cin>>minutos1;
+    cout<<"Ingrese los segundos de la hora inicial: ";
+    cin>>segundos1;
+    cout<<"Ingrese la hora final: ";
+    cin>>hora2;
+    cout<<"Ingrese los minutos de la hora final: ";
+    cin>>minutos2;
+    cout<<"Ingrese los segundos de la hora final: ";
+    cin>>segundos2;
+    
+    horaenseg1=(hora1*3600)+(minutos1*60)+segundos1;
+    horaenseg2=(hora2*3600)+(minutos2*60)+segundos2;
+    
+    diferencia=horaenseg2-horaenseg1;
+    
+    horas=diferencia/3600;
+    minutos=(diferencia%3600)/60;
+    segundos=(diferencia%3600)%60;
+    
+    cout<<"La diferencia es de : "<<horas<<" hrs "<<minutos<<" mins y "<<segundos<<" segs ";
+
+return 0;
+}
+
+EJERCICIO 11:
+Dado el peso P en gramos de una carta; haga un programa para calcular el costo de enviar la carta, de acuerdo a la siguiente tabla:
+Si 	0  < P < 50		entonces costo Bs. 1.50
+Si 	50 < P <= 100		entonces costo Bs. 4.00
+Si 	100 < P <= 200		entonces costo Bs. 6.00
+Si 	200 < P <= 350		entonces costo Bs. 10.50
+Si 	350 < P <= 500 	entonces costo Bs. 15.00
+Si 	P  > 500 		entonces mensaje 'NO PUEDE ENVIAR COMO CARTA'
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float peso,costo;
+    cout<<"Introducir el peso en gramos: ";
+    cin>>peso;
+    if (peso>0 && peso<50)
+    {
+      cout<<"El costo es de Bs. 1.50";
+    }
+        else
+        if (peso>50 && peso<=100)
+        {
+           cout<<"El costo es de Bs. 4.00"; 
+        }
+            else
+            if(peso>100 && peso<=200)
+            {
+               cout<<"El costo es de Bs. 6.00"; 
+            }
+                else
+                if(peso>200 && peso<=350)
+                {
+                    cout<<"El costo es de Bs. 10.50";
+                }
+                    else
+                    if(peso>350 && peso<=500)
+                    {
+                        cout<<"El costo es de Bs. 15.00";
+                    }
+                        else
+                        if(peso>500)
+                        {
+                           cout<<"No se puede enviar como carta";
+                        }
+return 0;
+}
+
+EJERCICIO 12:
+12.	Dada una fecha en día, mes y año, hacer un programa que determine si es ‘primavera’, ‘verano’, ‘otoño’ o ‘invierno’. 
+Se sabe que la primavera comienza el 21 de septiembre, el verano el 21 de diciembre, el otoño el 21 de marzo, y el invierno el 21 de junio.
