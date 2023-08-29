@@ -1,0 +1,93 @@
+PSelnt:
+Algoritmo sin_titulo
+	Escribir 'Ingrese el primer dato: '
+	Leer a
+	Si (a>=0) Y (a<=10) Entonces
+		Escribir 'Ingrese el segundo dato'
+		Leer b
+		Si (b>=0) Y (b<=10) Entonces
+			Escribir "Ingrese el tercer dato"
+			Leer c
+			Si (c>=0)&(c<=10) Entonces
+				promedio <- (a+b+c)/3
+				Escribir "El promedio es: ",promedio
+			SiNo
+				Escribir "El dato no es valido"
+			FinSi
+		SiNo
+			Escribir 'El dato no es valido'
+		FinSi
+	SiNo
+		Escribir 'El dato no es valido'
+	FinSi
+FinAlgoritmo
+
+c++:
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int promedio,dato1,dato2,dato3;
+    cout<<"Ingresar el primer dato:"<<endl;
+    cin>>dato1;
+    if ((dato1>=0)&&(dato1<=10))
+    {
+        cout<<"Ingresar el segundo dato: "<<endl;
+        cin>>dato2;
+        if ((dato2>=0)&&(dato2<=10))
+        {
+            cout<<"Ingresar el tercer dato: "<<endl;
+            cin>>dato3;
+            if ((dato3>=0)&&(dato3<=10))
+            {
+                promedio=(dato1+dato2+dato3)/3.0;
+                cout<<"El promedio es: "<<endl<<promedio;
+            }
+            else 
+            {
+                cout<<"No ingreso bien los datos";
+            }
+        }
+        else
+        {
+            cout<<"No ingreso bien los datos";
+        }
+    }
+    else
+    {
+        cout<<"No ingreso bien los datos";
+    }
+    
+    return 0;
+}
+
+c++ :
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int opcion;
+    float a,b,r;
+    cout<<"ingrese el dato a: "<<endl;
+    cin>>a;
+    cout<<"ingrese el dato b: "<<endl;
+    cin>>b;
+    cout<<"Menú"<<endl;
+    cout<<"1.Suma "<<endl;
+    cout<<"2.Resta "<<endl;
+    cout<<"3.Multiplicación "<<endl;
+    cout<<"4.División "<<endl;
+    cin>>opcion;
+    switch(opcion)
+    {
+        case 1:r=a+b;break;
+        case 2:r=a-b;break;
+        case 3:r=a*b;break;
+        case 4:r=a/b;break;
+        default: cout<<"Opción invalida"<<endl;
+    }
+    cout<<"El resultado es: "<<r<<endl;
+    return 0;
+}
