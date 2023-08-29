@@ -329,6 +329,47 @@ Se sabe que la primavera comienza el 21 de septiembre, el verano el 21 de diciem
 
 
 
+EJERCICIO 13:
+Calcular la solución de una ecuación cuadrática considerando todos los casos posibles. La forma general de la ecuación cuadrática es ax 2 + bx + c = 0, donde a, b, c son valores conocidos.
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    float a,b,c,discriminante,raiz1,raiz2,raiz;
+    cout<<"Ingresar la variable a: ";
+    cin>>a;
+    cout<<"Ingresar la variable b: ";
+    cin>>b;
+    cout<<"Ingresar la variable c: ";
+    cin>>c;
+    discriminante=b*b-4*a*c;
+    if(discriminante>0)
+    {
+       raiz1=(-b+sqrt(discriminante))/(2*a);
+       raiz2=(-b-sqrt(discriminante))/(2*a);
+       cout<<"Dos raices reales y distintas"<<endl;
+       cout<<"X1"<<raiz1<<endl;
+       cout<<"X2"<<raiz2<<endl;
+        if(discriminante==0)
+        {
+          raiz=(-b)/(2*a);
+          cout<<"Una raiz real y repetida"<<endl;
+          cout<<"X"<<raiz<<endl;
+            if(discriminante<0)
+            {
+               cout<<"Indefinido"<<endl;
+            }
+        }
+    }
+return 0;
+}
 
-13.	Calcular la solución de una ecuación cuadrática considerando todos los casos posibles. La forma general de la ecuación cuadrática es ax 2 + bx + c = 0, donde a, b, c son valores conocidos.
-
+EJERCICIO 14:
+14.	El siguiente es el menú de un restaurante de hamburguesas. Diséñese un algoritmo para calcular el total de la compras. 
+		ITEM					          CANTIDAD 		TOTAL PARCIAL
+		Hamburguesas  (3Bs)				    xxxx			xxxxx.xx
+		Hamburguesas  con queso ( 5Bs)		xxxx			xxxxx.xx
+		Papas fritas ( 2Bs)				    xxxx			xxxxx.xx
+		Soda	(2.5Bs)					    xxxx			xxxxx.xx
+	    T O T A L					        xxxx			xxxxx.xx
