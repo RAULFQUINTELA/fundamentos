@@ -201,13 +201,34 @@ Dx + Ey = F
 El algoritmo debe leer como entrada los 6 coeficientes de la ecuación, y dar como salida la solución X, Y, 
 considerando todos los tipos de solución posibles para todos los valores.
 
+#include <iostream>
 
+using namespace std;
 
-
-
-
-
-
+int main()
+{
+    float a,b,c,d,e,f,x,y;
+    cout<<"**Calculo de un sistema de ecuaciones de dos variables usando el metodo de sustitucion**"<<endl;
+    cout<<"Ingrese el dato de a: "<<endl;
+    cin>>a;
+    cout<<"Ingrese el dato de b: "<<endl;
+    cin>>b;
+    cout<<"Ingrese el dato de c: "<<endl;
+    cin>>c;
+    cout<<"Ingrese el dato d: "<<endl;
+    cin>>d;
+    cout<<"Ingrese el dato de e"<<endl;
+    cin>>e;
+    cout<<"Ingrese el dato de f: "<<endl;
+    cin>>f;
+    y=(a*f-c*d)/(e*a-b*d);
+    x=(c-b*y)/a;
+    cout<<"El resultado de X es: "<<x<<endl;
+    cout<<"El resultado de y es: "<<y<<endl;
+    
+    
+    return 0;
+}
 
 EJERCICIO 9:
 Construir un algoritmo que lea una cantidad de SEGUNDOS y los convierta en HORAS, MINUTOS Y SEGUNDOS 
