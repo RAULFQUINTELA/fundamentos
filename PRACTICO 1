@@ -237,9 +237,7 @@ Construir un algoritmo que lea dos horas del mismo día y halle la diferencia en
 El ingreso de las horas debe ser en formato de 24 horas: HH, MM, SS, como así también la diferencia.
 
 #include <iostream>
-
 using namespace std;
-
 int main()
 {
     int hora1,minutos1,segundos1,hora2,minutos2,segundos2,horaenseg1,horaenseg2,diferencia,horas,minutos,segundos;
@@ -280,9 +278,7 @@ Si 	350 < P <= 500 	entonces costo Bs. 15.00
 Si 	P  > 500 		entonces mensaje 'NO PUEDE ENVIAR COMO CARTA'
 
 #include <iostream>
-
 using namespace std;
-
 int main()
 {
     float peso,costo;
@@ -369,7 +365,7 @@ EJERCICIO 14:
 14.	El siguiente es el menú de un restaurante de hamburguesas. Diséñese un algoritmo para calcular el total de la compras. 
 		ITEM					          CANTIDAD 		TOTAL PARCIAL
 		Hamburguesas  (3Bs)				    xxxx			xxxxx.xx
-		Hamburguesas  con queso ( 5Bs)		xxxx			xxxxx.xx
+		Hamburguesas  con queso ( 5Bs)		            xxxx			xxxxx.xx
 		Papas fritas ( 2Bs)				    xxxx			xxxxx.xx
 		Soda	(2.5Bs)					    xxxx			xxxxx.xx
-	    T O T A L					        xxxx			xxxxx.xx
+	        T O T A L					    xxxx			xxxxx.xx
