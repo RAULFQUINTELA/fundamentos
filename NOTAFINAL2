@@ -1,0 +1,34 @@
+Algoritmo Nota_Final
+	Escribir 'Introducir la nota del primer parcial: '
+	Leer parcial1
+	Si ((parcial1>=0)&(parcial1<=100)) Entonces
+		Escribir 'Introducir la nota del segundo parcial: '
+		Leer parcial2
+		Si ((parcial2>=0)&(parcial2<=100)) Entonces
+			Escribir 'Introducir la nota del tercer parcial: '
+			Leer parcial3
+			Si ((parcial3>=0)&(parcial3<=100)) Entonces
+				Escribir 'Introducir la nota del examen final: '
+				Leer final
+				Si ((final>=0)&(final<=100)) Entonces
+					Escribir 'Introducir la nota practica: '
+					Leer practica
+					Si ((practica>=0)&(practica<=100)) Entonces
+						Notaf <- (((parcial1+parcial2+parcial3)/3)*0.4+final*0.4+practica*0.2)
+						Escribir 'La nota final del estudiante es: ', Notaf
+					SiNo
+						Escribir "Valor invalido de la nota practica"
+					FinSi
+				SiNo
+					Escribir "Valor invalido de la nota final"
+				FinSi
+			SiNo
+				Escribir "Valor invalido del tercer parcial"
+			FinSi
+		SiNo
+			Escribir "Valor invalido del segundo parcial"
+		FinSi
+	SiNo
+		Escribir "Valor invalido del primer parcial"
+	FinSi
+FinAlgoritmo
