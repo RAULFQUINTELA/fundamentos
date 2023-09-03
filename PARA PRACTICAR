@@ -1,0 +1,203 @@
+1.
+/*Calcular la circunferencia, el área y el volumen de una esfera, si se conoce como dato el diámetro D.*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float diametro,circunferencia,area,volumen,pi,radio;
+    cout<<"Calculo de circunferencia, el área y el volumen de una esfera"<<endl;
+    cout<<"Introducir el diametro de la esfera: ";
+    cin>>diametro;
+    pi=3.1416;
+    radio=diametro/2;
+    circunferencia=2*pi*radio;
+    area=4*pi*radio*radio;
+    volumen=((4.0/3.0)*pi*radio*radio*radio);
+    cout<<"El radio es: "<<radio<<endl;
+    cout<<"La circunferencia es: "<<circunferencia<<endl;
+    cout<<"El area es: "<<area<<endl;
+    cout<<"El volumen es: "<<volumen<<endl;
+    
+    return 0;
+}
+
+2.
+/*Deducir el salario neto de un trabajador a partir de la lectura del nombre, horas trabajadas al mes, precio por hora,
+sabiendo que todo lo que se descuenta es un impuesto  RC-IVA de 13% sobre el salario bruto. Los trabajadores que  ganan más de 8.272 bolivianos 
+están obligados a  pagar el impuesto al Régimen Complementario al Impuesto al Valor Agregado (RC-IVA)*/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    string nombre_trabajador;
+    float horas_trabajadas,precio_hora,salario_bruto,salario_neto;
+    cout<<"Introducir el nombre del trabajador: ";
+    cin>>nombre_trabajador;
+    cout<<"Introducir las horas trabajadas en el mes: ";
+    cin>>horas_trabajadas;
+    cout<<"Introducir el precio por hora: ";
+    cin>>precio_hora;
+    salario_bruto=horas_trabajadas*precio_hora;
+    if(salario_bruto>8272)
+    {
+        salario_neto=salario_bruto-salario_bruto*0.13;
+        cout<<"El salario neto del trabajador es: "<<salario_neto;
+    }
+    else
+    {
+        salario_neto=salario_bruto;
+        cout<<"El salario neto del trabajador es: "<<salario_neto;
+    }
+    return 0;
+}
+
+3.
+/*Calcular el interés  simple  que ganará un capital C en un periodo de N años, conociendo que la tasa de interés es T. 
+Suponer que el interés es pagadero por cada año y no es capitalizable.*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float C,N,T,InteresSimple,MontoTotal;
+    cout<<"Calculo de interés simple"<<endl;
+    cout<<"Introduzca el capital: ";
+    cin>>C;
+    cout<<"Introduzca el periodo: ";
+    cin>>N;
+    cout<<"Introduzca la tasa de interes: ";
+    cin>>T;
+    InteresSimple=C*N*T/100;
+    MontoTotal=C+InteresSimple;
+    cout<<"El interes simple es: "<<InteresSimple<<endl;
+    cout<<"El monto total es es: "<<MontoTotal;
+    
+    return 0;
+}
+
+4.
+/*Construir un algoritmo para calcular la nota de final de un alumno sabiendo que rindió 3 exámenes parciales ponderados como 40 puntos,
+un examen final de 40 puntos, un proyecto final de 20 puntos.  La nota final es la suma de los tres conceptos*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float parcial_1,parcial_2,parcial_3,examen_final,proyecto_final,Nota_final;
+    cout<<"Calculo de nota final del alumno"<<endl;
+    cout<<"Introducir la nota del primer parcial: ";
+    cin>>parcial_1;
+    if((parcial_1>0)&&(parcial_1<=100))
+    {
+        cout<<"Introducir la nota del segundo parcial: ";
+        cin>>parcial_2;
+        if((parcial_2>0)&&(parcial_2<=100))
+        {
+            cout<<"Introducir la nota del tercer parcial: ";
+            cin>>parcial_3;
+            if((parcial_3>0)&&(parcial_3<=100))
+            {
+               cout<<"Introducir la nota del examen final: ";
+               cin>>examen_final;
+               if((examen_final>0)&&(examen_final<=100))
+               {
+                   cout<<"Introducir la nota del proyecto final: ";
+                   cin>>proyecto_final;
+                   if((proyecto_final>0)&&(proyecto_final<=100))
+                   {
+                       Nota_final=(((parcial_1+parcial_2+parcial_3)/3)*0.40+examen_final*0.40+proyecto_final*0.20);
+                       cout<<"La nota final del estudiante es: "<<Nota_final;
+                   }
+                   else
+                   cout<<"Nota invalida para el proyecto final";
+               }
+               else
+               cout<<"Nota invalida para el examen final";
+            }
+            else
+            cout<<"Nota invalida para el tercer parcial";
+        }
+        else
+        cout<<"Nota invalida para el segundo parcial";
+    }
+    else
+    cout<<"Nota invalida para el primer parcial";
+    
+    return 0;
+}
+
+5.
+/*La empresa "XYZ" está lanzando una promoción de venta de sus productos.
+Si el cliente compra menos de 1000 no tiene ningun descuento.
+Si el cliente compra mayor a 1000 pero menor o igual a 2000 tiene descuento del 20%.
+Si el cliente compra mayor a 2000 pero menor o igual a 4000 su descuento es del 30%.
+Si el cliente compra mayor a 4000 su descuento es del 50%.
+Debe mostrar como resultado el nombre del cliente mas cuanto pagará el cliente de acuerdo al monto de sus compras.*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string nombre_cliente;
+    float monto,descuento,total_a_pagar,precio;
+    int cantidad;
+    cout<<"Introduzca el nombre del cliente: "; cin>>nombre_cliente;
+    do
+    {
+        cout<<"Introduzca la cantidad: ";
+        cin>>cantidad;
+        if(cantidad<=0)
+        {
+            cout<<"Cantidad introducida invalida"<<endl;
+        }
+    }
+    while(cantidad<0);
+    do
+    {
+        cout<<"Introduzca el precio: ";
+        cin>>precio;
+        if(precio<=0)
+        {
+            cout<<"Precio introducido invalido"<<endl;
+        }
+    }
+    while(cantidad<0);
+    monto=cantidad*precio;
+    if(monto<1000)
+    {
+       cout<<"El monto total es: "<<monto;
+    }
+        else
+        if(monto>1000&&monto<=2000)
+        {
+            total_a_pagar=monto-monto*0.20;
+        }
+            else
+            if(monto>2000&&monto<=4000)
+            {
+                total_a_pagar=monto-monto*0.30;
+            }
+                else
+                if(monto>4000)
+                {
+                    total_a_pagar=monto-monto*0.50;
+                }
+    cout<<"EL cliente "<<nombre_cliente<<" debe pagar "<<total_a_pagar<<endl;
+    
+    return 0;
+}
+
+6.
