@@ -1,4 +1,14 @@
-Pselt:
+para el do y while en Pselnt:
+
+Algoritmo EcuacionCuadratica
+	Repetir
+		Escribir "dar valor"
+		Leer valor
+	Hasta Que valor=99
+FinAlgoritmo
+
+
+Pselnt:
 
 Algoritmo EcuacionCuadratica
 	Escribir "Ingresar a: "
