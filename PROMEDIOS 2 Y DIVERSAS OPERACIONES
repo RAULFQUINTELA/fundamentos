@@ -91,3 +91,43 @@ int main()
     cout<<"El resultado es: "<<r<<endl;
     return 0;
 }
+
+c++:
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int opcion;
+    float a,b,r;
+    cout<<"ingrese el dato a: "<<endl;
+    cin>>a;
+    cout<<"ingrese el dato b: "<<endl;
+    cin>>b;
+    do
+    {
+        cout<<"Menú"<<endl;
+        cout<<"1.Suma "<<endl;
+        cout<<"2.Resta "<<endl;
+        cout<<"3.Multiplicación "<<endl;
+        cout<<"4.División "<<endl;
+        cout<<"0.Salir"<<endl;
+        cout<<"Elige una opcion: "<<endl;
+        cin>>opcion;
+        switch(opcion)
+        {
+            case 1:r=a+b;break;
+            case 2:r=a-b;break;
+            case 3:r=a*b;break;
+            case 4:r=a/b;break;
+            case 0:cout<<"Salir";break;
+            default: cout<<"Opción invalida"<<endl;
+        }
+        if((opcion>=1)&&(opcion<=4))
+        cout<<"El resultado es: "<<r<<endl;
+        cout<<endl;
+    }
+    while(opcion!=0);
+    
+return 0;
+}
