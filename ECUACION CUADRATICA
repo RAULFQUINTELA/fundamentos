@@ -1,0 +1,81 @@
+Pselt:
+
+Algoritmo EcuacionCuadratica
+	Escribir "Ingresar a: "
+	Leer a
+	Escribir "Ingresar b: "
+	Leer b
+	Escribir "Ingresar c: "
+	Leer c
+	discriminante <- b*b-4*a*c
+	Si discriminante>0 Entonces
+		x1 <- (-b+discriminante^(1/2))/(2*a)
+		x2 <- (-b-discriminante^(1/2))/(2*a)
+		Escribir "Dos raices reales: "
+		Escribir "X1: ",x1
+		Escribir "X2: ",x2
+	SiNo
+		Si discriminante=0 Entonces
+			x <- -b/(2*a)
+			Escribir "Una raiz: "
+			Escribir "X: ",x
+		SiNo
+			xr <- -b/(2*a)
+			xi <- ((-discriminante)^(1/2))/(2*a)
+			Escribir "Dos raices imaginarias: "
+			Escribir "X1: ",xr,"+",xi,"i"
+			Escribir "X2: ",xr,"-",xi,"i"
+		FinSi
+	FinSi
+FinAlgoritmo
+
+c++:
+
+#include <iostream>
+#include "math.h"
+
+using namespace std;
+
+int main()
+{
+    float a,b,c,raiz,discriminante;
+    double x1,x2,x,xr,xi;
+    cout<<"introduzca la variable a: ";
+    cin>>a;
+    if(a==0)
+    {
+        cout<<"Error";
+    }
+    else
+    {
+    cout<<"introduzca la variable b: ";
+    cin>>b;
+    cout<<"introduzca la variable c: ";
+    cin>>c;
+    discriminante=(pow(b,2)-4*a*c);
+    if(discriminante>0)
+    {
+        cout<<"Dos raices reales: "<<endl;
+        x1=(-b+sqrt(discriminante))/(2*a);
+        x2=(-b-sqrt(discriminante))/(2*a);
+        cout<<"X1: "<<x1<<endl;
+        cout<<"X2: "<<x2<<endl;
+    }
+        else
+        if(discriminante==0)
+        {
+            cout<<"Una raiz: "<<endl;
+            x=(-b)/(2*a);
+            cout<<"X: "<<x;
+        }
+            else
+            {
+            cout<<"Dos raices imaginarias: "<<endl;
+            xr=-b/(2*a);
+            xi=((sqrt(-discriminante))/(2*a));
+            cout<<"X1: "<<xr<<"+"<<xi<<"i"<<endl;
+            cout<<"X2: "<<xr<<"-"<<xi<<"i"<<endl;
+            }
+    }
+return 0;
+}
