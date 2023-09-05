@@ -1,0 +1,61 @@
+Pselnt:
+Algoritmo Calcular_notas
+	Escribir "Ingrese el número de estudiantes: "
+	Leer n
+	// C es un contador, prom es un acumulador
+	c <- 1
+	prom <- 0
+	Mientras c<=n Hacer
+		Escribir "Ingresar parcial 1: "
+		Leer p1
+		Escribir "Ingresar parcial 2: "
+		Leer p2
+		Escribir "Ingresar parcial 3: "
+		Leer p3
+		Escribir "Ingresar examen final: "
+		Leer ef
+		Escribir "Ingresar nota práctica: "
+		Leer np
+		notafinal <- ((p1+p2+p3)/3)*0.4+(ef*0.4)+(np*0.2)
+		Escribir "Nota final del estudiante ",c," es: ",notafinal
+		c <- c+1
+		prom <- prom+notafinal
+	FinMientras
+	Escribir "El promedio de ",c," notas es: ",prom/c
+FinAlgoritmo
+
+c++:
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float p1,p2,p3,ef,np,prom,nf;
+    int c,n;
+    
+    c=1;
+    prom==0;
+    
+    cout<<"Ingrese numero de estudiantes: ";
+    cin>>n;
+    while(c<=n)
+    {
+        cout<<"Ingrese la nota del parcial 1: ";
+        cin>>p1;
+        cout<<"Ingrese la nota del parcial 2: ";
+        cin>>p2;
+        cout<<"Ingrese la nota del parcial 3: ";
+        cin>>p3;
+        cout<<"Ingrese la nota del examen final: ";
+        cin>>ef;
+        cout<<"Ingrese la nota practica: ";
+        cin>>np;
+        nf=((p1+p2+p3)/3)*0.4+ef*0.4+np*0.2;
+        cout<<"La nota final del estudiante "<<c<<" es: "<<nf<<endl;
+        c++;
+        prom=prom+nf;
+    }
+    cout<<"El promedio de "<<n<<" notas es: "<<prom/n;
+    return 0;
+}
