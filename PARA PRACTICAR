@@ -29,6 +29,7 @@ int main()
 sabiendo que todo lo que se descuenta es un impuesto  RC-IVA de 13% sobre el salario bruto. Los trabajadores que  ganan más de 8.272 bolivianos 
 están obligados a  pagar el impuesto al Régimen Complementario al Impuesto al Valor Agregado (RC-IVA)*/
 
+
 #include <iostream>
 #include <string>
 
@@ -201,3 +202,69 @@ int main()
 }
 
 6.
+/*Construir un algoritmo que lea una cantidad de SEGUNDOS y los convierta en HORAS, MINUTOS Y SEGUNDOS*/
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    int S,Horas,minutos,segundos,segundosR;
+    cout<<"Introduzca el total de segundos: ";
+    cin>>S;
+    Horas=S/3600;
+    segundosR=S%3600;
+    minutos=segundosR/60;
+    segundos=segundosR%60;
+    cout<<"Total de horas: "<<Horas<<endl;
+    cout<<"Total de minutos: "<<minutos<<endl;
+    cout<<"Total de segundos: "<<segundos<<endl;
+    
+    return 0;
+}
+
+7.
+/*Construir un algoritmo que lea dos horas del mismo día y halle la diferencia entre ellas. 
+El ingreso de las horas debe ser en formato de 24 horas: HH, MM, SS, como así también la diferencia.*/
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    int hora1,minuto1,segundo1,hora2,minuto2,segundo2,horasSeg1,horasSeg2,diferencia,horas,minutos,segundos;
+    cout<<"Ingrese la hora inicial: ";
+    cin>>hora1;
+    cout<<"Ingrese los minutos de la hora inicial: ";
+    cin>>minuto1;
+    cout<<"Ingrese los segundos de la hora inicial: ";
+    cin>>segundo1;
+    cout<<"Ingrese la hora final: ";
+    cin>>hora2;
+    cout<<"Ingrese los minutos de la hora final: ";
+    cin>>minuto2;
+    cout<<"Ingrese los segundos de la hora final: ";
+    cin>>segundo2;
+    
+    horasSeg1=(hora1*3600)+(minuto1*60)+segundo1;
+    horasSeg2=(hora2*3600)+(minuto2*60)+segundo2;
+    
+    diferencia=horasSeg2-horasSeg1;
+    
+    horas=diferencia/3600;
+    minutos=(diferencia%3600)/60;
+    segundos=(diferencia%3600)%60;
+    
+    cout<<"La diferencia entre el tiempo dado es de: "<<endl;
+    cout<<"Horas: "<<horas<<endl;
+    cout<<"Minutos: "<<minutos<<endl;
+    cout<<"Segundos: "<<segundos<<endl;
+    
+    return 0;
+}
+
+8.
