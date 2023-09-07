@@ -268,3 +268,68 @@ int main()
 }
 
 8.
+c++: 
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int c,n;
+    float parcial1,parcial2,parcial3,final,practica,promedio,nf;
+    
+    promedio==0;
+    c=1;
+    
+    cout<<"Ingresar la catidad de estudiantes: ";
+    cin>>n;
+    
+    while(n>=c)
+    {
+        cout<<"Ingresar la nota del primer parcial: ";
+        cin>>parcial1;
+        cout<<"Ingresar la nota del segundo parcial: ";
+        cin>>parcial2;
+        cout<<"Ingresar la nota del tercer parcial: ";
+        cin>>parcial3;
+        cout<<"Ingresar la nota del examen final: ";
+        cin>>final;
+        cout<<"Ingresar la nota practica: ";
+        cin>>practica;
+        nf=((parcial1+parcial2+parcial3)/3)*0.4+final*0.4+practica*0.2;
+        cout<<"La nota final del estudiante: "<<c<<" es "<<nf<<endl;
+        
+        c=c+1;
+        promedio=promedio+nf;
+    }
+    cout<<"El promedio total de los estudiantes ingresados es: "<<promedio/n;
+
+    return 0;
+}
+
+Pselnt:
+Algoritmo Promedio_estudiantes
+	Escribir "Ingresar la cantidad de estudiantes: "
+	Leer n
+	prom = 0
+	c <- 1
+	Mientras n>=c Hacer
+		Escribir "Ingresar nota del primer parcial: "
+		Leer parcial1
+		Escribir "Ingresar la nota del segundo parcial: "
+		Leer parcial2
+		Escribir "Ingresar la nota del tercer parcial: "
+		Leer parcial3
+		Escribir "Ingresar la nota del examen final: "
+		Leer final
+		Escribir "Ingresar la nota práctica: "
+		Leer practica
+		nf <- ((parcial1+parcial2+parcial3)/3)*0.4+final*0.4+practica*0.2
+		Escribir "La nota final del estudiante: ",c," es ",nf
+		prom = prom+nf
+		c <- c+1
+	FinMientras
+	Escribir "El promedio total de las notas finales de los estudiantes introducidos es: ",prom/n 
+FinAlgoritmo
+
+9.
