@@ -333,3 +333,96 @@ Algoritmo Promedio_estudiantes
 FinAlgoritmo
 
 9.
+c++:
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    float monto,descuento,total_pagar,precio;
+    int cantidad;
+    string nombre;
+    cout<<"Introduzca el nombre del cliente: ";cin>>nombre;
+    do
+    {
+        cout<<"Introduzca la cantidad: ";
+        cin>>cantidad;
+        if(cantidad<=0)
+        {
+            cout<<"Ingrese una cantidad mayor a cero"<<endl;
+        }
+    }
+    while(cantidad<=0);
+    do
+    {
+        cout<<"Introduzca el precio: ";
+        cin>>precio;
+        if(precio<=0)
+        {
+            cout<<"Ingrese un precio mayor a cero"<<endl;
+        }
+    }
+    while(precio<=0);
+    
+    monto=cantidad*precio;
+    
+    if(monto<1000)
+    {
+        total_pagar=monto;
+    }
+        else
+        if((monto>1000)&&(monto<=2000))
+        {
+            total_pagar=monto-monto*0.2;
+        }
+            else
+            if((monto>2000)&&(monto<=4000))
+            {
+                total_pagar=monto-monto*0.3;
+            }
+                else
+                if(monto>4000)
+                {
+                    total_pagar=monto-monto*0.5;
+                }
+    
+    cout<<"El monto total a pagar del cliente: "<<nombre<<" es "<<total_pagar;
+    
+    return 0;
+}
+
+PSelnt:
+Algoritmo Total_pago_cliente
+	Escribir 'Introduzca el nombre del cliente: '
+	Leer nombre
+	Repetir
+		Escribir 'Introduzca la cantidad: '
+		Leer cantidad
+		Si cantidad<=0 Entonces
+			Escribir 'Ingrese una cantidad mayor a cero'
+		FinSi
+	Hasta Que cantidad>=0
+	Repetir
+		Escribir 'Introduzca el precio: '
+		Leer precio
+		Si precio<=0 Entonces
+			Escribir 'Ingrese un precio mayor a cero'
+		FinSi
+	Hasta Que precio>=0
+	monto <- precio*cantidad
+	Si (monto<=1000) Entonces
+		total <- monto
+	FinSi
+	Si ((monto>1000) Y (monto<=2000)) Entonces
+		total <- monto-monto*0.2
+	FinSi
+	Si ((monto>2000) Y (monto<=4000)) Entonces
+		total <- monto-monto*0.3
+	FinSi
+	Si (monto>4000) Entonces
+		total <- monto-monto*0.5
+	FinSi
+	Escribir 'El total a pagar del cliente: ', nombre, ' es ', total
+FinAlgoritmo
