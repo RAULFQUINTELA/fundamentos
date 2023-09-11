@@ -1,0 +1,133 @@
+EJERCICIO 1
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float b,h,area,p;
+    cout<<"Ingrese el 1er dato de la base del terreno: ";
+    cin>>b;
+    cout<<"Ingrese el 2do dato de la base del terreno: ";
+    cin>>h;
+    area=b*h;
+    p=(b*2)+(h*2);
+    cout<<"El area del terreno es: "<<area<<endl;
+    cout<<"El perimetro del terreno es: "<<p<<endl;
+    return 0;
+    
+}
+
+EJERICIO 2
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+ int cantidad;
+ float total;
+ 
+ cout<<"Ingresar la cantidad de camisas: ";
+ cin>>cantidad;
+ 
+ if (cantidad<0)
+ {
+     cout<<"Ingresar numero mayor que 0";
+ }
+ else
+    {
+     if (cantidad>=3)
+     {
+        total=cantidad*5*0.80;
+        cout<<"El total de la compra es: "<<total;
+     }
+     else 
+     {
+        total=cantidad*5*0.90;
+        cout<<"El total de la compra es: "<<total;
+     }
+    }
+    return 0;
+}
+
+EJERCICIO 3.1
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float presupuesto,presupuestot;
+    int area;
+    cout<<"Ingrese el presupuesto"<<endl;
+    cin>>presupuesto;
+    cout<<"Areas: "<<endl;
+    cout<<"1.Ginecologia"<<endl;
+    cout<<"2.Traumatologia"<<endl;
+    cout<<"3.Pediatria"<<endl;
+    cout<<"Ingrese el area: "<<endl;
+    cin>>area;
+    switch(area)
+    {
+        case 1:presupuestot=presupuesto*0.4;break;
+        case 2:presupuestot=presupuesto*0.3;break;
+        case 3:presupuestot=presupuesto*0.3;break;
+        default: cout<<"Area registrada erronea";break;
+    }
+    cout<<"El presupuesto del area "<<area<<" es: "<<presupuestot;
+    return 0;
+}
+
+EJERCICIO 3.2
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float presupuesto,presupuesto1,presupuesto2,presupuesto3;
+    cout<<"Calculo de presupuesto correspondiente a cada area"<<endl;
+    cout<<"Introducir el presupuesto total: ";
+    cin>>presupuesto;
+    presupuesto1=presupuesto*0.4;
+    cout<<"El area de Ginecologìa tiene un presupuesto de: "<<presupuesto1<<endl;
+    presupuesto2=presupuesto*0.3;
+    cout<<"El area de Traumatologia tiene un presupuesto de: "<<presupuesto2<<endl;
+    presupuesto3=presupuesto*0.3;
+    cout<<"El area de Pediatria tiene un presupuesto de: "<<presupuesto3<<endl;
+    
+    return 0;
+}
+
+VISUAL STUDIO 1
+#include <iostream>
+using namespace std;
+int main()
+{
+    int N, M, c;
+    float promedio, suma = 0;
+    do
+    {
+        cout << "Ingrese el valor de N: ";
+        cin >> N;
+    } while (N < 0);
+    do
+    {
+        cout << "Ingrese el valor de M: ";
+        cin >> M;
+    } while ((M < 0)||(M < N));
+    c = N;
+    while(c<=M)
+    {
+        suma = suma + c;
+        c++;
+    }
+    cout << "La suma es: " << suma<<endl;
+    promedio = suma / (M - N + 1.0);
+    cout << "El promedio es: " << promedio;
+}
+
