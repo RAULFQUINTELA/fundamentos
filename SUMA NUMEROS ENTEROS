@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int N;
+    float suma=0;
+    //pedir y validar valores
+    do
+    {
+        cout << "Introduzca el valor de n: ";
+        cin >> N;
+        if (N<0)
+        {
+            cout << "El valor n deber ser mayor a 1" << endl;
+        }
+    } while (N<=0);
+
+    //un ciclo for
+    for (int i = 1; i <= N; i++) //inicializaciòn, condiciòn para repetir,incremento
+    {
+        cout << i << "+";
+        suma = suma + i;
+    }
+    //Mostrar los resultados
+        cout << endl<< "La suma es: " << suma << endl;
+}
