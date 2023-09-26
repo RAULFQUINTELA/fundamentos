@@ -1,0 +1,28 @@
+/*Suma de los números enteros entre 1 y N.*/
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int N;
+    float suma=0;
+    do
+    {
+        cout << "Introduzca el valor de n: ";
+        cin >> N;
+        if (N<0)
+        {
+            cout << "El valor n deber ser mayor a 1" << endl;
+        }
+    } while (N<=0);
+
+    for (int i = 1; i <= N; i++)
+    {
+        cout << i << "+";
+        suma = suma + i;
+    }
+        cout << endl<< "La suma es: " << suma << endl;
+        
+    return 0;
+}
