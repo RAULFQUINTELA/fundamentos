@@ -1,0 +1,46 @@
+/******************************************************************************
+
+Dado un valor entero N encontrar la sumatoria de los numeros pares e impares
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int N;
+    int sumai=0;
+    int sumap=0;
+    do
+    {
+        cout << "Introduzca el valor de n: ";
+        cin >> N;
+        if (N<0)
+        {
+            cout << "El valor n deber ser mayor a 1" << endl;
+        }
+    } while (N<=0);
+
+    for (int i = 1; i <= N; i++)
+    {
+        if (i % 2 == 0) 
+        {
+        cout << i << "+";
+        sumap +=i;
+        }
+    }
+        cout << endl<< "La suma de los numeros pares es: " << sumap << endl;
+        
+    for (int i = 1; i <= N; i+=2)
+    {
+        cout << i << "+";
+        
+        sumai = sumai + i;
+    }
+        cout << endl<< "La suma de los numeros impares es: " << sumai << endl;
+    
+        
+    return 0;
+}
