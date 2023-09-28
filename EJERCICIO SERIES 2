@@ -1,0 +1,73 @@
+/*Calcular el producto de los primeros N números enteros.
+	P= 1x2x3x........xN */
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int calcularFactorial(int n)
+{
+   float fact=1;
+   for(int i=1;i<=n;i++)
+   {
+       fact*=i;
+   }
+   return fact;
+}
+
+int sumarNumerosNaturales (int n)
+{
+    int suma=0;
+   for(int i=1;i<=n;i++)
+   {
+       suma+=i;
+   }
+   return suma;
+}
+
+int division (int n)
+{
+    return calcularFactorial(n)/sumarNumerosNaturales(n);
+}
+
+int exponente (int base,int exponente)
+{
+    return pow(base,exponente);
+}
+
+int main()
+{
+    int const Inicio=1;
+    int x;
+    float SumaSerie=0;
+    int terminos;
+    cout <<"Ingresar el valor de X: ";
+    cin >>x;
+    cout<<"Cuántos terminos de la serie quiere calcular: ";
+    cin>>terminos;
+    cout<<endl;
+    
+    for (int i=1;i<=terminos;i++)
+    {
+        SumaSerie+=exponente(x,i)/calcularFactorial(i);
+    }
+    cout<<"La suma de la serie es: "<<SumaSerie+Inicio;
+    
+    return 0;
+}
+
+int Resultados ()
+{
+    int n;
+    cout <<"Ingresar el número que quiere calcular: ";
+    cin>>n;
+    
+    cout<<"El factorial de "<<n<<" es: "<<calcularFactorial(n)<<endl;
+    cout<<"La suma de los números de "<<n<<" es: "<<sumarNumerosNaturales(n)<<endl;
+    cout<<"La división entre el factorial y la suma de los números es: "<<division(n)<<endl;
+    cout<<"El exponente es: "<<exponente(n,3)<<endl;
+    
+    
+    return 0;
+}
