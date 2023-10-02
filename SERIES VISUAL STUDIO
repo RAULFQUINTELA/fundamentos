@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int numero, suma = 0, digito, X;
+    //Entrada con validacion
+    do
+    {
+        cout << "Ingrese el numero: ";
+        cin >> numero;
+    } while (numero <= 0);
+    //Separar en digitos y sumar
+    X = numero; // Guardo el valor antes que se cambie
+    while(numero!=0) 
+    {
+        digito = numero % 10;
+        suma += digito;
+        numero /= 10; //La variable de repeticion va a cambiar
+    }
+    cout << "La suma de los digitos del numero: " << X << " es " << suma;
+}
