@@ -1,0 +1,39 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int Calculofact(int n);
+
+int main()
+{
+    int n,factorial;
+    int i;
+    do
+    {
+        cout<<"Introducir el numero a calcular el factorial: ";
+        cin>>n;
+        if(n<0)
+        {
+            cout<<"El número a ingresar debe ser mayor a 0";
+        }
+    }
+    while(n<=0);
+    
+    factorial=Calculofact(n);
+    
+    cout<<"El factorial del número: "<<n<<" es "<<Calculofact(n);
+    
+    return 0;
+}
+
+int Calculofact(int n)
+{
+    int fact=1;
+    for(int i = 1; i <= n; i++)
+    {
+        fact=fact*i;
+    }
+    
+    return fact;
+}  
