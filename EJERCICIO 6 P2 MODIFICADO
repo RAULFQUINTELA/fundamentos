@@ -1,0 +1,49 @@
+/*Autor: Raúl Quintela , Agustin Parada - Ejercicio 6 del práctico 2*/
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int CalculoSuma(int X,int N);
+
+int main()
+{
+    int X,N;
+    float resultado;
+    do
+    {
+        cout<<"Introduzca el valor de X: ";
+        cin >> X;
+        if (X < 0)
+        {
+            cout << "El valor X deber ser mayor a cero" << endl;
+        }
+    } while (X < 0);
+    do
+    {
+        cout << "Introduzca el valor de N: ";
+        cin >> N;
+        if (N < 0)
+        {
+            cout << "El valor de N debe ser mayor a 0" << endl;
+        }
+    } while (N < 0);
+
+    resultado=CalculoSuma(X,N);
+    
+    cout<<"La suma de la serie es: "<<resultado<<endl;
+    
+    return 0;
+}
+
+int CalculoSuma(int X,int N)
+{
+    float suma=0;
+    
+    for(int i = 1; i <= N; i++)
+    {
+        suma += pow(X,i);
+    }
+    
+    return suma;
+}  
