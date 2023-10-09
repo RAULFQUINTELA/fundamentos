@@ -81,3 +81,86 @@ float InversionDigito(int n)
 }
 
 3.
+/*Hacer un programa para contar los dígitos pares que tiene un número N.  Ej. Si N= 5678312,  este tiene 3 dígitos pares (6, 8, 2).*/
+
+#include <iostream>
+
+using namespace std;
+
+int SumaPares(int n);
+
+int main()
+{
+    int n;
+    float Resultado;
+    cout<<"Escribir el número a calcular los pares: ";
+    cin>>n;
+    Resultado=SumaPares(n);
+    cout<<"La suma de los números pares es: "<<Resultado;
+    
+    return 0;
+}
+
+int SumaPares(int n)
+{
+    float SumaPares=0;
+    int digito;
+    while(n!=0)
+    {
+        digito=n%10;
+        if(digito%2==0)
+        {
+            SumaPares+=digito;
+        }
+        n/=10;
+    }
+    return SumaPares;
+}
+
+4.
+/*Dado un número entero, comprobar si el número es capicúa, es decir, si leídos de la izquierda a la derecha y viceversa dan el mismo valor o número.  
+Ej. 34543*/
+
+#include <iostream>
+
+using namespace std;
+
+int NumeroReverso(int n);
+
+int main()
+{
+    int n;
+    float Original,Revertido;
+    int digito;
+    
+    cout<<"Escribir el número a comprobar: ";
+    cin>>n;
+    
+    Original=n;
+    Revertido=NumeroReverso(n);
+    
+    if(Original==Revertido)
+    {
+        cout<<"El número introducido es capicúa";
+    }
+    else
+    {
+        cout<<"El número introducido no es capicúa";
+    }
+    return 0;
+}
+
+int NumeroReverso(int n)
+{
+    int digito;
+    float Reverso=0;
+    while(n!=0)
+    {
+       digito=n%10;
+       Reverso=Reverso*10+digito;
+       n=n/10;
+    }
+    return Reverso;
+}
+
+5.
