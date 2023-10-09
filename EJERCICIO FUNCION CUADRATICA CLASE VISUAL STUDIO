@@ -1,0 +1,77 @@
+// Raul Francisco Quintela Jordan
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+float CalculoRaizUnica(float a, float b, float c);
+void CalculoMultipleSol(int a, int b, int c, float &x1, float &x2);
+
+int main()
+{
+    int a, b, c,D;
+    float x1, x2;
+    do
+    {
+        cout << "Introducir la variable a: ";
+        cin >> a;
+        if (a < 0)
+        {
+            cout << "La variable a introducir debe ser mayor o igual a 0";
+        }
+    } while (a < 0);
+    do
+    {
+        cout << "Introducir la variable b: ";
+        cin >> b;
+        if (b < 0)
+        {
+            cout << "La variable a introducir debe ser mayor o igual a 0";
+        }
+    } while (b < 0);
+    do
+    {
+        cout << "Introducir la variable c: ";
+        cin >> c;
+        if (c < 0)
+        {
+            cout << "La variable a introducir debe ser mayor o igual a 0";
+        }
+    } while (c < 0);
+
+    D = pow(b, 2) - 4 * a * c;
+    if (D == 0)
+    {
+        cout << "Una raiz única: "<<"x: "<<CalculoRaizUnica(a,b,c);
+    }
+    else
+    if (D > 0)
+    {
+        CalculoMultipleSol(a, b, c, x1, x2);
+        cout << "Dos raices reales: " << "x1: " << x1<<" y "<<" x2: "<<x2<<endl;
+    }
+    else
+    if (D < 0)
+    {
+        cout << "Raiz indeterminada";
+    }
+        return 0;
+}
+
+float CalculoRaizUnica(float a, float b, float c)
+{
+    float Raiz;
+    Raiz = -b / (2 * a);
+
+    return Raiz;
+}
+void CalculoMultipleSol(int a, int b, int c, float &x1, float &x2)
+{
+    float Raiz1,Raiz2;
+
+    Raiz1 = ( - b + pow(b, 2) - 4 * a * c)/ (2 * a);
+    Raiz2 = (-b - pow(b, 2) - 4 * a * c) / (2 * a);
+
+    Raiz1 = x1;
+    Raiz2 = x2;
+}
