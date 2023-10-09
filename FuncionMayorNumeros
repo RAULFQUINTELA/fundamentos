@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+void mayorde(int a, int b, int c, int &valor);
+
+int main()
+{
+    int numero1, numero2, numero3, valor;
+    do
+    {
+        cout << "Introducir el primer numero: ";
+        cin >> numero1;
+        if(numero1<0)
+        {
+            cout << "El numero a introducir debe ser mayor o igual a 0";
+        }
+    } while (numero1 < 0);
+    do
+    {
+        cout << "Introducir el segundo numero: ";
+        cin >> numero2;
+        if (numero2 < 0)
+        {
+            cout << "El numero a introducir debe ser mayor o igual a 0";
+        }
+    } while (numero2 < 0);
+    do
+    {
+        cout << "Introducir el tercer numero: ";
+        cin >> numero3;
+        if (numero3 < 0)
+        {
+            cout << "El numero a introducir debe ser mayor o igual a 0";
+        }
+    } while (numero3 < 0);
+
+    mayorde(numero1, numero2, numero3, valor);
+
+    cout << "El numero mayor de los tres proporcionados es: " << valor;
+}
+
+void mayorde(int a, int b, int c, int &valor)// & es parametro por referencia
+{
+    int mayor;
+    if ((a > b) && (a > c))
+        mayor = a;
+    if ((b > a) && (b > c))
+        mayor = b;
+    if ((c > a) && (c > b))
+        mayor = c;
+    if ((a == b) && (a == c))
+        mayor = b;
+    valor = mayor;
+}
