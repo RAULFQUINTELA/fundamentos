@@ -165,3 +165,81 @@ int NumeroReverso(int n)
 }
 
 5.
+/*Hallar el complemento a 9 de un número entero N.  Ej. 4567, su complemento es 5432.*/
+
+#include <iostream>
+
+using namespace std;
+
+int encontrarComplementoA9(int numero) 
+{
+    int complemento = 0;
+    int digito,complementoDigito;
+    
+    while (numero > 0) 
+    {
+        digito = numero % 10;
+        complementoDigito = 9 - digito;
+        complemento = complementoDigito + complemento * 10;
+        numero /= 10;
+    }
+
+    return complemento;
+}
+
+int main() {
+    int numero;
+
+    cout << "Ingrese un numero entero: ";
+    cin >> numero;
+
+    int complemento = encontrarComplementoA9(numero);
+    cout << "El complemento a 9 de " << numero << " es: " << complemento << endl;
+
+    return 0;
+}
+
+6.
+/*Dado un número entero en base 8, comprobar si alguno de sus dígitos no corresponden a su base.  
+Ej. El número 2762823, el dígito 8 no corresponde a la base*/
+
+#include <iostream>
+
+using namespace std;
+
+#include <iostream>
+
+bool verificarDigitosEnBase8(int numero) 
+{
+    while (numero > 0) 
+    {
+        int digito = numero % 10;
+        
+        if (digito >= 8) 
+        {
+            return true;
+        }
+        numero /= 10;
+    }
+
+    return false;
+}
+
+int main() 
+{
+    int numero;
+
+    cout << "Ingrese un numero en base 8: ";
+    cin >> oct >> numero;
+
+    if (verificarDigitosEnBase8(numero)) 
+    {
+        cout << "Algunos dígitos no corresponden a la base 8." << endl;
+    } 
+    else 
+    {
+        cout << "Todos los dígitos corresponden a la base 8." << endl;
+    }
+
+    return 0;
+}
