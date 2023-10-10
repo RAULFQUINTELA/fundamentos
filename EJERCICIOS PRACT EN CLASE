@@ -1,0 +1,126 @@
+1.
+/*Construir una función POTEN(y, y), para calcular la potencia x y de dos números reales cualesquiera.*/
+
+
+#include <iostream>
+
+using namespace std;
+
+int POTEN(int x,int y);
+
+int main()
+{
+    float x,y,Resultado;
+    
+    cout<<"Introducir la variable X: ";
+    cin>>x;
+    cout<<"Introducir la potencia Y: ";
+    cin>>y;
+    
+    Resultado=POTEN(x,y);
+    
+    cout<<"El resultado de la operación es: "<<Resultado;
+    return 0;
+}
+
+int POTEN(int x,int y)
+{
+    int acum=1;
+    for(int i=1;i<=y;i++)
+    {
+        acum=acum*x;
+    }
+    return acum;
+}
+
+2.
+/*Construir una función FAC(n) para calcular el factorial de un entero.*/
+
+#include <iostream>
+
+using namespace std;
+
+int FACTn (int n);
+
+int main()
+{
+    float n,Resultado;
+    cout<<"Introducir el número a calcular su factorial: ";
+    cin>>n;
+    Resultado=FACTn(n);
+    cout<<"El factorial del numero: "<<n<<" es "<<Resultado;
+    return 0;
+}
+
+int FACTn (int n)
+{
+    int fact=1;
+    for(int i=1;i<=n;i++)
+    {
+        fact=fact*i;
+    }
+    return fact;
+}
+
+6.
+/*Dada una fecha en forma de día, mes, año; mediante un procedimiento LITERAL convertirla en su equivalente literal. 
+Por ejemplo: la fecha 20, 5, 99 se debe ser convertida e imprimir ’20 de Mayo de 1999’. La llamada para este caso sería LITERAL(20, 5, 99).*/
+
+#include <iostream>
+
+using namespace std;
+
+int CalcularMes(int m);
+int CalcularAño(int a);
+
+int main()
+{
+    int d,m,a,Mes,Año;
+    
+    cout<<"Ingresar el día: ";
+    cin>>d;
+    cout<<"Ingresar el mes: ";
+    cin>>m;
+    cout<<"Ingresar el año: ";
+    cin>>a;
+
+    cout<<"La fecha escrita es: "<<d<<" de "<<CalcularMes(m)<<" de "<<CalcularAño(a);
+    
+    return 0;
+}
+
+int CalcularMes(int m)
+{
+    switch(m)
+    {
+        case 1 : cout<<"Enero";break;
+        case 2 : cout<<"Febrero";break;
+        case 3 : cout<<"Marzo";break;
+        case 4 : cout<<"Abril";break;
+        case 5 : cout<<"Mayo";break;
+        case 6 : cout<<"Junio";break;
+        case 7 : cout<<"Julio";break;
+        case 8 : cout<<"Agosto";break;
+        case 9 : cout<<"Septiembre";break;
+        case 10 : cout<<"Octubre";break;
+        case 11 : cout<<"Noviembre";break;
+        case 12 : cout<<"Diciembre";break;
+        default : cout<<"Mes establecido erroneo"<<endl;
+    }
+    return m;
+}
+
+int CalcularAño(int a)
+{
+    int TotalA;
+    if ((a>=0)&&(a<=23))
+    {
+        TotalA=2000+a;
+    }
+    else
+    if ((a>=0)&&(a<=99))
+    {
+        TotalA=1900+a;
+    }
+    return TotalA;
+}
