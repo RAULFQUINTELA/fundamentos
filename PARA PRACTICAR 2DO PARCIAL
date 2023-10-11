@@ -1,0 +1,368 @@
+ PRACTICO 2.
+1.
+/*Suma de los números enteros entre 1 y N. S=1+2+3+⋯…………+N*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float n,suma=0;
+    do
+    {
+        cout<<"Introducir el número a calcular: ";
+        cin>>n;
+        if(n<0)
+        {
+            cout<<"El número a introducir deber ser mayor a 0";
+        }
+    }
+    while(n<0);
+    
+    for(int i=1;i<=n;i++)
+    {
+        suma=suma+i;
+    }
+    
+    cout<<"El resultado de la operación es: "<<suma;
+    return 0;
+}
+
+2.
+/*Suma de los números enteros impares comprendidos entre 1 y N.
+	S=1+3+5+⋯…………+N */
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float n,suma=0;
+    do
+    {
+        cout<<"Introducir el número a calcular: ";
+        cin>>n;
+        if(n<0)
+        {
+            cout<<"El número a introducir deber ser mayor a 0";
+        }
+    }
+    while(n<0);
+    
+    
+    for(int i=1;i<=n;i=i+2)
+    {
+        suma=suma+i;
+    }
+    
+    cout<<"El resultado de la operación es: "<<suma;
+    return 0;
+}
+
+3.
+/*Suma de los cuadrados de los primeros N números enteros.
+	S=1^2+2^2+3^2+⋯…………+N^2*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float n,suma=0;
+    do
+    {
+        cout<<"Introducir el número a calcular: ";
+        cin>>n;
+        if(n<0)
+        {
+            cout<<"El número a introducir deber ser mayor a 0";
+        }
+    }
+    while(n<0);
+    
+    
+    for(int i=1;i<=n;i++)
+    {
+        suma=suma+i*i;
+    }
+    
+    cout<<"El resultado de la operación es: "<<suma;
+    return 0;
+}
+
+4.
+/*Calcular la siguiente suma
+	S= 1 - 2 + 3 - 4 + 5 - .........+/- N.*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float n,suma=0;
+    int signo=1;
+    do
+    {
+        cout<<"Introducir el número a calcular: ";
+        cin>>n;
+        if(n<0)
+        {
+            cout<<"El número a introducir deber ser mayor a 0";
+        }
+    }
+    while(n<0);
+    
+    
+    for(int i=1;i<=n;i++)
+    {
+        suma=suma+signo*i;
+        signo=signo*-1;
+    }
+    
+    cout<<"El resultado de la operación es: "<<suma;
+    return 0;
+}
+
+5.
+/*Calcular el producto de los primeros N números enteros.
+	P= 1x2x3x........xN*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float n,producto=1;
+    do
+    {
+        cout<<"Introducir el número a calcular: ";
+        cin>>n;
+        if(n<0)
+        {
+            cout<<"El número a introducir deber ser mayor a 0";
+        }
+    }
+    while(n<0);
+    
+    
+    for(int i=1;i<=n;i++)
+    {
+        producto=producto*i;
+    }
+    
+    cout<<"El resultado de la operación es: "<<producto;
+    return 0;
+}
+
+6.
+/*Calcular la siguiente serie, donde X es un número real.
+	S=x^1+x^2+x^3+⋯…………+x^n*/
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    float n,producto,x;
+    
+    cout<<"Introducir la base del número: ";
+    cin>>x;
+    cout<<"Introducir la potencia del número: ";
+    cin>>n;
+    
+    for(int i=1;i<=n;i++)
+    {
+        producto=producto+pow(x,i);
+    }
+    
+    cout<<"El resultado de la operación es: "<<producto;
+    return 0;
+}
+
+7.
+/*Calcular el factorial de un número entero N. Donde se define como factorial de la siguiente forma: FAC(N) = 1x2x3x.....xN; 
+donde el factorial de cero es uno  (FAC(0) =1).  FAC(N)=N!, se lee factorial (!) de N.*/
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    float n,fact=1,x;
+    
+    cout<<"Introducir el número a calcular el factorial: ";
+    cin>>n;
+    
+    for(int i=1;i<=n;i++)
+    {
+        fact=fact*i;
+    }
+    
+    cout<<"FACT("<<n<<"): "<<fact;
+    return 0;
+}
+
+8.
+/*Calcular la siguiente serie:
+		S= X/1! + X^2/2! + X^3/3! + ........X^n/n!*/
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    int n,x;
+    float serie=0,fact=1;
+    
+    cout<<"Introducir el dividendo: ";
+    cin>>x;
+    cout<<"Introducir el divisor/exponente del dividendo: ";
+    cin>>n;
+    
+    for(int i=1;i<=n;i++)
+    {
+        fact=fact*i;
+        serie=serie+(pow(x,i))/fact;
+    }
+    
+    cout<<"El resultado de la serie es: "<<serie;
+    return 0;
+}
+
+9.
+/*Calcular la siguiente serie: S= X/1! - X^2/2! + X^3/3! - ........(+/-)X^n/n!*/
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    int n,x;
+    float serie=0,fact=1;
+    
+    cout<<"Introducir el dividendo: ";
+    cin>>x;
+    cout<<"Introducir el divisor/exponente del dividendo: ";
+    cin>>n;
+    
+    for(int i=1;i<=n;i++)
+    {
+        fact=fact*i;
+        serie=serie+(pow(-1,i-1)*pow(x,i))/fact;
+    }
+    
+    cout<<"El resultado de la serie es: "<<serie;
+    return 0;
+}
+
+10.
+#include <iostream>
+#include <cmath>
+
+int calcularFactorial(int n) 
+{
+    if (n == 0 || n == 1) 
+    {
+        return 1;
+    } else {
+        int factorial = 1;
+        for (int i = 2; i <= n; ++i) 
+        {
+            factorial *= i;
+        }
+        return factorial;
+    }
+}
+
+int main() 
+{
+    double X;
+    int N;
+
+    std::cout << "Ingrese el valor de X: ";
+    std::cin >> X;
+
+    do 
+    {
+        std::cout << "Ingrese el número de términos (N, debe ser impar): ";
+        std::cin >> N;
+    } while (N % 2 == 0);
+
+    double suma = 0;
+
+    for (int n = 1; n <= N; n += 2) {
+        double termino = pow(-1, n / 2) * pow(X, n) / calcularFactorial(n);
+        suma += termino;
+    }
+
+    std::cout << "El resultado de la serie es: " << suma << std::endl;
+
+    return 0;
+}
+
+PRACTICO 3.
+1.
+/*Dado un número entero N, hacer un programa para sumar los dígitos de cada uno de ellos.   Ej. Si N= 45634,  la suma es 4+5+6+3+4=22*/
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    int n,digito,suma=0;
+    cout<<"Introducir el número a calcular: ";
+    cin>>n;
+    
+    while(n!=0)
+    {
+        digito=n%10;
+        suma=suma+digito;
+        n=n/10;
+    }
+    
+    cout<<"El resultado de la suma es: "<<suma;
+    return 0;
+}
+
+2.
+/*Dado un número entero N, hacer un programa para invertir el número en otra variable Z.  Ej. Si N= 456721, el número invertido es Z=127654.*/
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    int n,digito,inv=0;
+    cout<<"Introducir el número a invertir: ";
+    cin>>n;
+    
+    while(n!=0)
+    {
+        digito=n%10;
+        inv=inv*10+digito;
+        n=n/10;
+    }
+    
+    cout<<"El número invertido es: "<<inv;
+    return 0;
+}
+
+3.
+
