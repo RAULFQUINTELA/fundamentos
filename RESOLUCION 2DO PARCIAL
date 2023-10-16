@@ -1,0 +1,37 @@
+/*EJERCICIO 3*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float P,M,PT;
+    cout<<"Calculo el precio final del producto: "<<endl;
+    do
+    {
+        cout<<"Ingresar el precio del costo: ";
+        cin>>P;
+        if(P<0)
+        {
+            cout<<"El precio debe ser un numero positivo"<<endl;
+        }
+    }
+    while(P<0);
+    do
+    {
+        cout<<"Ingresar el porcentaje del margen deseado: ";
+        cin>>M;
+        if((M<0)&&(M>100))
+        {
+            cout<<"El margen debe ser un numero entero positivo comprendido de 0 a 100"<<endl;
+        }
+    }
+    while((M<0)&&(M>100));
+    
+    PT=P*(1+((M/100)/100));
+    
+    cout<<"El precio final del producto es: "<<PT;
+    
+    return 0;
+}
