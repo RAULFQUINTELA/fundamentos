@@ -29,7 +29,7 @@ int main()
     }
     while((M<0)&&(M>100));
     
-    PT=P*(1+((M/100)/100));
+    PT=P*(1+(M/100));
     
     cout<<"El precio final del producto es: "<<PT;
     
