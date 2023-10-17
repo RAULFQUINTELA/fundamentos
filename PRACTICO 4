@@ -1,0 +1,182 @@
+1.
+/*Construir una función POTEN(y, y), para calcular la potencia x y de dos números reales cualesquiera.*/
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+float POTEN(float x, float y);
+
+int main()
+{
+    float x,y,Resultado;
+    
+    cout<<"Ingresar la base : ";
+    cin>>x;
+    cout<<"Ingresar la potencia: ";
+    cin>>y;
+    Resultado=POTEN(x,y);
+    
+    cout<<"El resultado de la operación es: "<<Resultado;
+    
+    return 0;
+}
+
+float POTEN(float x, float y)
+{
+    float potencia;
+    
+    potencia=pow(x,y);
+    
+    return potencia;
+}
+
+2.
+/*Construir una función FAC(n) para calcular el factorial de un entero.*/
+
+#include <iostream>
+
+using namespace std;
+
+float FACT(float n);
+
+int main()
+{
+    float n,Resultado,numero;
+    
+    cout<<"Ingresar el número a calcular el factorial : ";
+    cin>>n;
+    numero=n;
+    
+    Resultado=FACT(n);
+    
+    cout<<"El factorial del número "<<numero<<" es: "<<Resultado;
+    
+    return 0;
+}
+
+float FACT(float n)
+{
+    float fact=1;
+    
+    for(int i=1;i<=n;i++)
+    {
+        fact=fact*i;
+    }
+    
+    return fact;
+}
+
+3.
+/*Construir un programa, que mediante funciones, para hallar la suma de la siguiente serie, dados X y N enteros positivos*/
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+float SERIE(float x, float n);
+
+int main()
+{
+    float x,n,Resultado;
+    
+    cout<<"Ingresar el dividendo: ";
+    cin>>x;
+    cout<<"Ingresar el divisor/exponente del número: ";
+    cin>>n;
+    
+    Resultado=SERIE(x,n);
+    
+    cout<<"El resultado de la operación es: "<<Resultado;
+    
+    return 0;
+}
+
+float SERIE(float x, float n)
+{
+    float fact=1,serie=0;
+    
+    for(int i=1;i<=n;i++)
+    {
+        fact=fact*i;
+        serie=serie+(pow(x,i))/fact;
+    }
+    return serie;
+}
+
+4.
+/*Construir un programa, que mediante funciones, halle la suma de la siguiente serie, dados X y N enteros positivos:*/
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+float SERIE(float x, float n);
+
+int main()
+{
+    float x,n,Resultado;
+    
+    cout<<"Ingresar el dividendo: ";
+    cin>>x;
+    cout<<"Ingresar el divisor/exponente del número: ";
+    cin>>n;
+    
+    Resultado=SERIE(x,n);
+    
+    cout<<"El resultado de la operación es: "<<Resultado;
+    
+    return 0;
+}
+
+float SERIE(float x, float n)
+{
+    float fact=1,serie=0;
+    
+    for(int i=1;i<=n;i++)
+    {
+        fact=fact*i;
+        serie=serie+(pow(-1,i-1)*pow(x,i))/fact;
+    }
+    return serie;
+}
+
+5.
+#include <iostream>
+
+using namespace std;
+
+//Agustin Parada-Emiliano Ribera
+
+void sistema(int a,int b,int c,int d,int e,int f, int &x, int &y);
+
+int main()
+{
+    int a,b,c,d,e,f,x,y;
+    cout<<"Ingrese el dato de a: ";
+    cin>>a;
+    cout<<"Ingrese el dato de b: ";
+    cin>>b;
+    cout<<"Ingrese el dato de c: ";
+    cin>>c;
+    cout<<"Ingrese el dato de d: ";
+    cin>>d;
+    cout<<"Ingrese el dato de e: ";
+    cin>>e;
+    cout<<"Ingrese el dato de f: ";
+    cin>>f;
+    sistema(a,b,c,d,e,f,x,y);
+    cout<<"El resultado de X es de: "<<endl<<x<<endl<<"El resultado de Y es de: "<<endl<<y;
+    return 0;
+}
+
+void sistema(int a,int b,int c,int d,int e,int f, int &x, int &y)
+{
+    y=(a*f-c*d)/(e*a-b*d);
+    x=(c-b*y)/a;
+}
+
+6.
