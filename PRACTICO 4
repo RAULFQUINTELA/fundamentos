@@ -180,3 +180,245 @@ void sistema(int a,int b,int c,int d,int e,int f, int &x, int &y)
 }
 
 6.
+/*Dada una fecha en forma de día, mes, año; mediante un procedimiento LITERAL convertirla en su equivalente literal. 
+Por ejemplo: la fecha 20, 5, 99 se debe ser convertida e imprimir ’20 de Mayo de 1999’. La llamada para este caso sería LITERAL(20, 5, 99).*/
+
+#include <iostream>
+
+using namespace std;
+
+int CalcularMes(int m);
+int CalcularAño(int a);
+
+int main()
+{
+    int d,m,a,Mes,Año;
+    
+    cout<<"Ingresar el día: ";
+    cin>>d;
+    cout<<"Ingresar el mes: ";
+    cin>>m;
+    cout<<"Ingresar el año: ";
+    cin>>a;
+
+    cout<<"La fecha escrita es: "<<d<<" de "<<CalcularMes(m)<<" de "<<CalcularAño(a);
+    
+    return 0;
+}
+
+int CalcularMes(int m)
+{
+    switch(m)
+    {
+        case 1 : cout<<"Enero";break;
+        case 2 : cout<<"Febrero";break;
+        case 3 : cout<<"Marzo";break;
+        case 4 : cout<<"Abril";break;
+        case 5 : cout<<"Mayo";break;
+        case 6 : cout<<"Junio";break;
+        case 7 : cout<<"Julio";break;
+        case 8 : cout<<"Agosto";break;
+        case 9 : cout<<"Septiembre";break;
+        case 10 : cout<<"Octubre";break;
+        case 11 : cout<<"Noviembre";break;
+        case 12 : cout<<"Diciembre";break;
+        default : cout<<"Mes establecido erroneo"<<endl;
+    }
+    return m;
+}
+
+int CalcularAño(int a)
+{
+    int TotalA;
+    if ((a>=0)&&(a<=23))
+    {
+        TotalA=2000+a;
+    }
+    else
+    if ((a>=0)&&(a<=99))
+    {
+        TotalA=1900+a;
+    }
+    return TotalA;
+}
+
+7.
+/*	Dado un número combinatorio con parámetros n y r, obtener su valor numérico. Un número combinatorio se define de la siguiente forma:
+
+   n   	      n!
+Combi(n, r) =            =  ----------          donde ‘!’ es la función factorial
+		 	   r	   r! (n-r)!
+
+Construir un programa que utilice una función factorial llamada FAC(n), y luego desde el programa principal la llame de la siguiente forma:
+
+		C = FAC(n) / (FAC(r) * FAC(n-r))*/
+
+#include <iostream>
+
+using namespace std;
+
+// Función para calcular el factorial de un número
+unsigned long long int FAC(int num) 
+{
+    if (num == 0 || num == 1) 
+    {
+        return 1;
+    } 
+    else 
+    {
+        return num * FAC(num - 1);
+    }
+}
+
+// Función para calcular el número combinatorio
+unsigned long long int Combi(int n, int r) 
+{
+    return FAC(n) / (FAC(r) * FAC(n - r));
+}
+
+int main() {
+    int n, r;
+
+    // Solicitar entrada al usuario
+    std::cout << "Ingrese el valor de n: ";
+    std::cin >> n;
+
+    std::cout << "Ingrese el valor de r: ";
+    std::cin >> r;
+
+    // Verificar si r es mayor que n
+    if (r > n) 
+    {
+        cout << "Error: r no puede ser mayor que n." << std::endl;
+        return 1;
+    }
+
+    // Calcular el número combinatorio y mostrar el resultado
+    unsigned long long int C = Combi(n, r);
+    cout << "El número combinatorio C(" << n << ", " << r << ") es: " << C << endl;
+
+    return 0;
+}
+
+8.
+/*Construir un procedimiento para resolver una ecuación cuadrática de la forma ax2 + bx + c = 0, 
+considerando todos los casos; es decir dos raíces reales, dos raíces complejas o una raíz doble.*/
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+float SolUnica(float a, float b, float c);
+void MultipleSol(float a, float b, float c, float &x1,float &x2);
+void SolImaginaria(float a, float b, float c, float &xi,float &xr);
+
+int main()
+{
+    float a,b,c,x1,x2,xi,xr,D,R;
+    
+    cout<<"Introducir la variable a: ";
+    cin>>a;
+    cout<<"Introducir la variable b: ";
+    cin>>b;
+    cout<<"Introducir la variable c: ";
+    cin>>c;
+    
+    D=pow(b,2)-4*a*c;
+    
+    if(D==0)
+    {
+        cout<<"Una raiz: "<<endl;
+        cout<<"x: "<<SolUnica(a,b,c);
+    }
+    else
+    if(D>0)
+    {
+        MultipleSol(a,b,c,x1,x2);
+        
+        cout<<"Dos raices reales: "<<endl;
+        cout<<"X1: "<<x1<<endl;
+        cout<<"X2: "<<x2<<endl;
+    }
+    else
+    if(D<0)
+    {
+        SolImaginaria(a,b,c,xi,xr);
+        cout<<"Dos raices imaginarias: "<<endl;
+        cout<<"X1: "<<xr<<"+"<<xi<<"i"<<endl;
+        cout<<"X2: "<<xr<<"-"<<xi<<"i"<<endl;
+    }
+    
+    return 0;
+}
+
+float SolUnica(float a, float b, float c)
+{
+    float SolU;
+    
+    SolU=-b/(2*a);
+    
+    return SolU;
+}
+
+void MultipleSol(float a, float b, float c, float &x1,float &x2)
+{
+    float D;
+    D=pow(b,2)-4*a*c;
+    
+    x1=(-b+sqrt(D))/(2*a);
+    x2=(-b-sqrt(D))/(2*a);
+}
+
+void SolImaginaria(float a, float b, float c, float &xi,float &xr)
+{
+    float D;
+    D=pow(b,2)-4*a*c;
+    
+    xr=-b/(2*a);
+    xi=((sqrt(-D))/(2*a));
+}
+
+9.
+
+
+10.
+/*Construir un procedimiento para convertir un número N en su equivalente en números romanos.*/
+
+#include <iostream>
+using namespace std;
+
+// Procedimiento para convertir un número a su equivalente en números romanos
+void ConvertirARomano(int numero) 
+{
+    if (numero <= 0 || numero > 3999) 
+    {
+        cout << "Error: El número debe estar en el rango de 1 a 3999." << endl;
+        return;
+    }
+    const int valores[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+    const string simbolos[] = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+
+    cout << "El número romano equivalente es: ";
+
+    for (int i = 0; i < 13; ++i) 
+    {
+        while (numero >= valores[i]) 
+        {
+            cout << simbolos[i];
+            numero = numero - valores[i];
+        }
+    }
+
+    cout << endl;
+}
+
+int main() {
+    int numero;
+    
+    cout << "Ingrese un número (1-3999): ";
+    cin >> numero;
+    
+    ConvertirARomano(numero);
+    return 0;
+}
