@@ -380,6 +380,38 @@ void SolImaginaria(float a, float b, float c, float &xi,float &xr)
 }
 
 9.
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Función para convertir un número binario a decimal
+int binarioADecimal(string numeroBinario) {
+    int longitud = numeroBinario.length();
+    int decimal = 0;
+    int potencia = 1;
+
+    for (int i = longitud - 1; i >= 0; i--) {
+        if (numeroBinario[i] == '1') {
+            decimal += potencia;
+        }
+        potencia *= 2;
+    }
+
+    return decimal;
+}
+
+int main() {
+    string numeroBinario;
+    cout << "Ingrese un número binario: ";
+    cin >> numeroBinario;
+
+    int numeroDecimal = binarioADecimal(numeroBinario);
+
+    cout << "El equivalente decimal de " << numeroBinario << " es: " << numeroDecimal << endl;
+
+    return 0;
+}
 
 
 10.
@@ -421,4 +453,220 @@ int main() {
     
     ConvertirARomano(numero);
     return 0;
+}
+
+11.
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Función para convertir un número real en su equivalente literal
+string numeroLiteral(double numeroReal) {
+    const string unidades[] = {"cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"};
+    const string decenas[] = {"", "diez", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa"};
+    const string especiales[] = {"diez", "once", "doce", "trece", "catorce", "quince", "dieciséis", "diecisiete", "dieciocho", "diecinueve"};
+
+    int parteEntera = static_cast<int>(numeroReal);
+    int parteDecimal = static_cast<int>((numeroReal - parteEntera) * 100);
+
+    string resultado = "";
+
+    // Procesar la parte entera
+    if (parteEntera > 0) {
+        if (parteEntera >= 1000) {
+            resultado += unidades[parteEntera / 1000] + " mil ";
+            parteEntera %= 1000;
+        }
+
+        if (parteEntera >= 100) {
+            resultado += unidades[parteEntera / 100] + " cien ";
+            parteEntera %= 100;
+        } else if (parteEntera >= 20) {
+            resultado += decenas[parteEntera / 10] + " ";
+            parteEntera %= 10;
+            if (parteEntera > 0) {
+                resultado += "y ";
+            }
+        } else if (parteEntera >= 10) {
+            resultado += especiales[parteEntera - 10] + " ";
+            parteEntera = 0;
+        }
+
+        if (parteEntera > 0) {
+            resultado += unidades[parteEntera] + " ";
+        }
+    } else {
+        resultado = "cero ";
+    }
+
+    // Procesar la parte decimal
+    if (parteDecimal > 0) {
+        resultado += "con " + unidades[parteDecimal / 10] + " coma " + unidades[parteDecimal % 10];
+    }
+
+    return resultado;
+}
+
+int main() {
+    double numeroReal;
+    cout << "Ingrese un número real de hasta cuatro cifras con dos decimales: ";
+    cin >> numeroReal;
+
+    if (numeroReal < 0 || numeroReal > 9999.99) {
+        cout << "Número fuera de rango." << endl;
+    } else {
+        string literal = numeroLiteral(numeroReal);
+        cout << "El equivalente literal es: " << literal << endl;
+    }
+
+    return 0;
+}
+
+12.
+/*Construir una función para validar una fecha dada en día, mes y año.*/
+
+#include <iostream>
+
+using namespace std;
+
+bool esBisiesto(int year) 
+{
+    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+}
+
+bool esFechaValida(int dia, int mes, int anio) 
+{
+    if (anio < 0 || mes < 1 || mes > 12 || dia < 1) 
+    {
+        return false;  // Año negativo, mes fuera de rango o día negativo no son válidos
+    }
+
+    int diasEnMes[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+    // Ajustar febrero si es bisiesto
+    if (mes == 2 && esBisiesto(anio)) 
+    {
+        diasEnMes[2] = 29;
+    }
+
+    return dia <= diasEnMes[mes];
+}
+
+int main() 
+{
+    int dia, mes, anio;
+
+    // Solicitar la fecha al usuario
+    cout << "Ingrese el día: ";
+    cin >> dia;
+
+    cout << "Ingrese el mes: ";
+    cin >> mes;
+
+    cout << "Ingrese el año: ";
+    cin >> anio;
+
+    // Validar la fecha
+    if (esFechaValida(dia, mes, anio)) 
+    {
+        cout << "La fecha es válida." << endl;
+    } else 
+    {
+        cout << "La fecha no es válida." << endl;
+    }
+
+    return 0;
+}
+
+13.
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+float redondearDecimales(float numero, int n);
+
+int main() {
+    double numero;
+    int n; // Cambia esto al número de decimales que desees
+    
+    cout<<"Ingresar el numero: ";
+    cin>>numero;
+    cout<<"Ingresar la cantidad de decimales que desees: ";
+    cin>>n;
+
+    double numeroRedondeado = redondearDecimales(numero, n);
+
+    cout << "Número original: " << numero << endl;
+    cout << "Número redondeado a " << n << " decimales: " << numeroRedondeado << endl;
+
+    return 0;
+}
+
+float redondearDecimales(float numero, int n)
+{
+    float factor = pow(10, n);
+    return round(numero * factor) / factor;
+}
+
+14.
+#include <iostream>
+
+using namespace std;
+
+struct Fecha;
+
+int diasEnMes(int mes); 
+
+int main() 
+{
+    int dia1, mes1, anio1;
+    int dia2, mes2, anio2;
+
+    cout << "Ingrese la primera fecha:" << endl;
+    cout << "Día: ";
+    cin >> dia1;
+    cout << "Mes: ";
+    cin >> mes1;
+    cout << "Año: ";
+    cin >> anio1;
+
+    cout << "Ingrese la segunda fecha:" << endl;
+    cout << "Día: ";
+    cin >> dia2;
+    cout << "Mes: ";
+    cin >> mes2;
+    cout << "Año: ";
+    cin >> anio2;
+
+    int totalDias1 = dia1;
+    int totalDias2 = dia2;
+    for (int m = 1; m < mes1; m++) 
+    {
+        totalDias1 += diasEnMes(m);
+    }
+    for (int m = 1; m < mes2; m++) 
+    {
+        totalDias2 += diasEnMes(m);
+    }
+
+    int diferencia = abs(totalDias1 - totalDias2);
+
+    cout << "Días transcurridos entre las fechas: " << diferencia << " días" << endl;
+    
+    return 0;
+}
+
+struct Fecha 
+{
+    int dia;
+    int mes;
+    int anio;
+};
+
+int diasEnMes(int mes)
+{
+    int diasPorMes[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    return diasPorMes[mes];
 }
