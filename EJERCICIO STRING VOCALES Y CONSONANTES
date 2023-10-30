@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string frase;
+    cout << "Introduce una frase: ";
+    getline(cin, frase);
+
+    int contadorVocales = 0;
+    int contadorConsonantes = 0;
+
+    for (char caracter : frase) {
+        if (isalpha(caracter)) {
+            // Convertir a minúscula para simplificar la verificación
+            char caracterMin = tolower(caracter);
+
+            // Verificar si es una vocal
+            if (caracterMin == 'a' || caracterMin == 'e' || caracterMin == 'i' || caracterMin == 'o' || caracterMin == 'u') {
+                contadorVocales++;
+            }
+            else {
+                contadorConsonantes++;
+            }
+        }
+    }
+
+    cout << "Número de vocales: " << contadorVocales << endl;
+    cout << "Número de consonantes: " << contadorConsonantes << endl;
+
+    return 0;
+}
