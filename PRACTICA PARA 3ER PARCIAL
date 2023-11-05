@@ -1,0 +1,266 @@
+1.
+/*Hacer un programa para sacar el máximo valor de un vector de valores ya sean reales o enteros.*/
+
+#include <iostream>
+using namespace std;
+
+void cargar(float a[], int n);
+void mostrar(float a[], int n);
+float max(float a[], int n);
+
+int main()
+{
+    int n;
+    cout<<"Introducir el tamaño de la matriz: ";
+    cin>>n;
+    float vector[n];
+    cargar (vector,n);
+    cout<<"El valor máximo del vector es: "<<max(vector,n)<<endl;
+}
+
+void cargar(float a[], int n)
+{
+    cout<<"Insertar los valores de la matriz: "<<endl;
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+}
+
+void mostrar(float a[], int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        cout<<a[i];
+    }
+}
+
+float max(float a[], int n)
+{
+    int max=a[0];
+    for(int i=1;i<n;i++)
+    {
+        if(a[i]>max)
+        {
+            max=a[i];
+        }
+    }
+    return max;
+}
+2.
+/*Hacer un programa para sacar el mínimo valor de un vector de valores ya sean reales o enteros.*/
+
+#include <iostream>
+using namespace std;
+
+void cargar(float a[],int n);
+void mostrar(float a[],int n);
+float min(float a[], int n);
+
+int main()
+{
+    int n;
+    cout<<"Introducir el tamaño de la matriz: ";
+    cin>>n;
+    float vector[n];
+    cargar(vector,n);
+    cout<<"El mínimo valor dentro del vector es: "<<min(vector,n)<<endl;
+
+    return 0;
+}
+
+void cargar(float a[],int n)
+{
+    cout<<"Introducir los valores del vector: "<<endl;
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+}
+void mostrar(float a[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        cout<<a[i];
+    }
+}
+float min(float a[], int n)
+{
+    float min=a[0];
+    for(int i=1;i<n;i++)
+    {
+        if(a[i]<min)
+        {
+            min=a[i];
+        }
+    }
+    return min;
+}
+3.
+/*Hacer un programa para sacar el promedio de valores de un vector.*/
+
+#include <iostream>
+using namespace std;
+
+void cargar (float a[], int n);
+void mostrar (float a[], int n);
+float prom (float a[], int n);
+
+int main()
+{
+    int n;
+    cout<<"Ingrese el tamaño de la matriz: ";
+    cin>>n;
+    float vector[n];
+    cargar(vector,n);
+    cout<<"El promedio del vector de tamaño "<<n<<" es: "<<prom(vector,n)<<endl;
+
+    return 0;
+}
+
+void cargar (float a[], int n)
+{
+    cout<<"Introducir los valores del vector de tamaño "<<n<<" : "<<endl;
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+}
+
+void mostrar (float a[], int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        cout<<a[i];
+    }
+}
+
+float prom (float a[], int n)
+{
+    int prom=a[0];
+    for(int i=1;i<n;i++)
+    {
+        prom=prom+a[i];
+    }
+    int Resultado=prom/n;
+    
+    return Resultado;
+}
+4.
+/*Hacer un programa para revertir la lista de valores de un vector, en otro vector, es decir se debe mantener el vector original.*/
+
+#include <iostream>
+using namespace std;
+
+void cargar (float a[], int n);
+void mostrar (float a[], int n);
+void VectorInvertido(float a[], float b[], int n);
+
+int main()
+{
+    int n;
+    cout<<"Introducir el tamaño del vector: ";
+    cin>>n;
+    float vector[n];
+    cargar(vector,n);
+    
+    float VectorInv[n];
+    
+    VectorInvertido(vector,VectorInv,n);
+    
+    cout<<"Vector original: "<<endl;
+    mostrar(vector,n);
+    cout<<"Vector invertido: "<<endl;
+    mostrar(VectorInv,n);
+
+    return 0;
+}
+
+void cargar (float a[], int n)
+{
+    cout<<"Introduzca los valores a invertir: "<<endl;
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+}
+
+void mostrar (float a[], int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        cout<<a[i]<<endl;
+    }
+}
+
+void VectorInvertido(float a[], float b[], int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        b[i]=a[n-1-i];
+    }
+}
+5.
+/*Hacer un programa para determinar si un vector es capicúa, es decir, si el vector revertido es igual al inicial, se dice que el vector es capicúa.*/
+
+#include <iostream>
+using namespace std;
+
+void cargar (float a[], int n);
+void mostrar (float a[], int n);
+bool VectorInvertido (float a[], int n);
+
+int main()
+{
+    int n;
+    cout<<"Ingresar el tamaño del vector: ";
+    cin>>n;
+    
+    float vector[n];
+    cargar(vector,n);
+    
+    if((VectorInvertido(vector,n))==true)
+    {
+        cout<<"El vector es capicúa";
+    }
+    else
+    {
+        cout<<"El vector no es capicúa";
+    }
+    
+    return 0;
+}
+
+void cargar (float a[], int n)
+{
+    cout<<"Introducir los valores del vector a definir: "<<endl;
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+}
+void mostrar (float a[], int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        cout<<a[i];
+    }
+}
+
+bool VectorInvertido (float a[], int n)
+{
+    float VectInv[n];
+    
+    for(int i=0;i<n;i++)
+    {
+        VectInv[i]=a[n-1-i];
+    }
+    for(int i=0;i<n;i++)
+    {
+        if (a[i]!=VectInv[i])
+        {
+            return false;
+        }
+    }
+    return true;
+}
