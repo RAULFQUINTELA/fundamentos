@@ -250,7 +250,266 @@ void mostrar (float a[], int n)
 bool VectorInvertido (float a[], int n)
 {
     float VectInv[n];
+
+6.
+/*
+Sacar el promedio de cada tres valores consecutivos en un vector.
+P1= A1 + A2 + A3 
+P2= A2 + A3 + A4
+P3= A3 + A4 + A5
+*/
+
+#include <iostream>
+
+using namespace std;
+
+void cargar(float a[], int n);
+void mostrar(float a[], int n);
+void PromCadaTres(float a[], int n);
+
+int main()
+{
+    int n;
+    cout<<"Ingresar el tamaño del vector a calcular: ";
+    cin>>n;
     
+    float vector[n];
+    cargar(vector,n);
+    
+    PromCadaTres(vector,n);
+
+    return 0;
+}
+
+void cargar(float a[], int n)
+{
+    cout<<"Insertar los valores a calcular: ";
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+}
+
+void mostrar(float a[], int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        cout<<a[i]<<endl;
+    }
+}
+
+void PromCadaTres(float a[], int n)
+{
+    float promedio;
+    
+    if(n<3)
+    {
+        cout << "No hay suficientes elementos para calcular el promedio de cada tres valores consecutivos." << endl;
+        return;
+    }
+    
+    cout << "Promedio de cada tres valores consecutivos:" << endl;
+    for(int i=0;i<n-2;i++)
+    {
+        promedio=(a[i]+a[i+1]+a[i+2])/3;
+        
+        cout<<"P"<<i+1<<" = "<<promedio<<endl;
+    }
+}
+
+7.
+/*Dado un número entero, el programa debe devolver el valor escrito literalmente. Por ejemplo, si se da 12 debe devolver 'DOCE'. 
+Hacer esto hasta el valor 20. ¿Es posible generalizar para 30, 31, 32, ....100,101,... etc.*/
+
+#include <iostream>
+
+using namespace std;
+
+void ValorEscrito(int n);
+
+int main()
+{
+    int n;
+    cout<<"Escribir un número entero a tranformar a literal (Valor entre 1 y 20): ";
+    cin>>n;
+    if(n < 1 || n >20 )
+    {
+        cout<<"El valor a introducir debe estar entre 1 y 20";
+        return 1;
+    }
+    
+    cout<<"El valor literal es: ";
+    ValorEscrito(n);
+    
+    return 0;
+}
+
+void ValorEscrito(int n)
+{
+    switch (n)
+    {
+        case 1: cout<<"UNO";break;
+        case 2: cout<<"DOS";break;
+        case 3: cout << "TRES"; break;
+        case 4: cout << "CUATRO"; break;
+        case 5: cout << "CINCO"; break;
+        case 6: cout << "SEIS"; break;
+        case 7: cout << "SIETE"; break;
+        case 8: cout << "OCHO"; break;
+        case 9: cout << "NUEVE"; break;
+        case 10: cout << "DIEZ"; break;
+        case 11: cout << "ONCE"; break;
+        case 12: cout << "DOCE"; break;
+        case 13: cout << "TRECE"; break;
+        case 14: cout << "CATORCE"; break;
+        case 15: cout << "QUINCE"; break;
+        case 16: cout << "DIECISEIS"; break;
+        case 17: cout << "DIECISIETE"; break;
+        case 18: cout << "DIECIOCHO"; break;
+        case 19: cout << "DIECINUEVE"; break;
+        case 20: cout << "VEINTE"; break;
+        default: cout << "Número fuera del límite establecido"; break;
+    }
+}
+
+8.
+/*Dado un vector A de n números reales, obténgase la diferencia más grande entre dos elementos consecutivos de este vector.*/
+
+#include <iostream>
+
+using namespace std;
+
+void cargar(float a[], int n);
+void mostrar(float a[], int n);
+float DifMasGrande(float a[], int n);
+
+int main()
+{
+    int n;
+    cout<<"Introducir el tamaño del vector: ";
+    cin>>n;
+    
+    float vector[n];
+    cargar(vector,n);
+    
+    float DiferenciaMaxima=DifMasGrande(vector,n);
+    
+    cout<<"La diferencia más grande entre dos elementos consecutivos es: "<<DiferenciaMaxima;
+
+    return 0;
+}
+
+void cargar(float a[], int n)
+{
+    cout<<"Introducir los valores de la matriz: ";
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+}
+
+void mostrar(float a[], int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        cout<<a[i]<<endl;
+    }
+}
+
+float DifMasGrande(float a[], int n)
+{
+    if(n<2)
+    {
+        cout<<"El tamaño de la matriz no puede ser inferior a 2"<<endl;
+        return 0;
+    }
+    
+    float DiferenciaMax=abs(a[1]-a[0]);
+    
+    for(int i=2;i<n;i++)
+    {
+        float DiferenciaActual=abs(a[i]-a[i-1]);
+        if(DiferenciaActual>DiferenciaMax)
+        {
+            DiferenciaMax=DiferenciaActual;
+        }
+    }
+    return DiferenciaMax;
+}
+
+9.
+/*Concatenar dos vectores de tamaño n y m respectivamente. [a1,a2,......an;]  [b1,b2,....bm]; 
+concatenado resulta [a1,a2,......an,b1,b2,....bm] con n+m elementos.*/
+
+#include <iostream>
+using namespace std;
+
+void cargar(double a[], int t);
+void mostrar(double a[], int t);
+void concatenarVectores(double a[], int n, double b[], int m, double resultado[], int size);
+
+int main() 
+{
+    int n, m;
+    cout << "Ingrese el tamaño del primer vector (n): ";
+    cin >> n;
+
+    cout << "Ingrese el tamaño del segundo vector (m): ";
+    cin >> m;
+
+    double arr1[n];
+    double arr2[m];
+
+    cout << "Ingrese los elementos del primer vector:" << endl;
+    cargar(arr1, n);
+
+    cout << "Ingrese los elementos del segundo vector:" << endl;
+    cargar(arr2, m);
+
+    // Concatenar los dos vectores
+    int sizeResultado = n + m;
+    double resultado[sizeResultado];
+
+    concatenarVectores(arr1, n, arr2, m, resultado, sizeResultado);
+
+    // Mostrar el resultado concatenado
+    cout << "Vector concatenado:" << endl;
+    mostrar(resultado, sizeResultado);
+
+    return 0;
+}
+
+void cargar(double a[], int t) {
+    cout << "Ingrese los elementos del vector:" << endl;
+    for (int i = 0; i < t; i++) {
+        cin >> a[i];
+    }
+}
+
+void mostrar(double a[], int t) 
+{
+    for (int i = 0; i < t; i++) 
+    {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+}
+
+void concatenarVectores(double a[], int n, double b[], int m, double resultado[], int size) 
+{
+    for (int i = 0; i < n; i++) 
+    {
+        resultado[i] = a[i];
+    }
+
+    for (int i = 0; i < m; i++) 
+    {
+        resultado[n + i] = b[i];
+    }
+
+    size = n + m;
+}
+
     for(int i=0;i<n;i++)
     {
         VectInv[i]=a[n-1-i];
