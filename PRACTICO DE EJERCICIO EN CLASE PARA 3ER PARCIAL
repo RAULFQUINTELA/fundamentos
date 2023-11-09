@@ -1,0 +1,113 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void registrarProducto(string productos[], double precios[], int &n);
+double calcularPrecioTotal(double precios[], int n);
+string encontrarProductoMasCaro(string productos[], double precios[], int n);
+void mostrarListaProductosPrecios(string productos[], double precios[], int n);
+
+int main() 
+{
+    const int MAX_PRODUCTOS = 100;
+    string productos[MAX_PRODUCTOS];
+    double precios[MAX_PRODUCTOS];
+    
+    int n = 0;
+    
+    int opcion;
+    
+    do 
+    {
+        cout << "1. Registrar Producto y Precio" << endl;
+        cout << "2. Calcular Precio Total" << endl;
+        cout << "3. Encontrar el Producto más Caro" << endl;
+        cout << "4. Mostrar Lista de Productos y Precios" << endl;
+        cout << "0. Salir" << endl;
+        cout << "Selecciona una opción: ";
+        cin >> opcion;
+        
+        switch (opcion) 
+        {
+            case 1: registrarProducto(productos, precios, n); break;
+            case 2: cout << "Precio Total: $" << calcularPrecioTotal(precios, n) << endl; break;
+            case 3: cout << "El producto más caro es " << encontrarProductoMasCaro(productos, precios, n) << endl; break;
+            case 4: mostrarListaProductosPrecios(productos, precios, n); break;
+            case 0: cout << "¡Hasta luego!" << endl; break;
+            default: cout << "Opción no válida. Inténtalo de nuevo." << endl;
+        }
+        
+    } while (opcion != 0);
+    
+    return 0;
+}
+
+void registrarProducto(string productos[], double precios[], int &n)
+{
+    if (n < 100)
+    {
+        string nombre;
+        double precio;
+        
+        cout << "Ingrese el nombre del producto: ";
+        cin.ignore();
+        getline(cin, nombre);
+        cout << "Ingrese el precio del producto: $";
+        cin >> precio;
+        
+        productos[n] = nombre;
+        precios[n] = precio;
+        
+        n++;
+        
+        cout << "Producto registrado con éxito." << endl;
+    } 
+    else
+    {
+        cout << "Se ha alcanzado el límite de productos registrados." << endl;
+    }
+}
+
+double calcularPrecioTotal(double precios[], int n) 
+{
+    double total = 0.0;
+    for (int i = 0; i < n; i++) 
+    {
+        total = total + precios[i];
+    }
+    return total;
+}
+
+string encontrarProductoMasCaro(string productos[], double precios[], int n) 
+{
+    if (n == 0) 
+    {
+        return "No hay productos registrados.";
+    }
+    
+    int ProductoMasCaro = 0;
+    for (int i = 1; i < n; i++) 
+    {
+        if (precios[i] > precios[ProductoMasCaro]) 
+        {
+            ProductoMasCaro = i;
+        }
+    }
+    
+    return productos[ProductoMasCaro];
+}
+
+void mostrarListaProductosPrecios(string productos[], double precios[], int n) 
+{
+    if (n == 0) 
+    {
+        cout << "No hay productos registrados." << endl;
+        return;
+    }
+    
+    cout << "Lista de Productos y Precios:" << endl;
+    for (int i = 0; i < n; i++) 
+    {
+        cout << productos[i] << " - Precio: $" << precios[i] <<endl;
+    }
+}
