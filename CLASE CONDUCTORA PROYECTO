@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Conductora
+{
+public:
+    string nombre;
+    string modeloAuto;
+    string placaAuto;
+
+    Conductora() 
+    {
+        nombre = "Sin nombre";
+        modeloAuto = "Sin modelo";
+        placaAuto = "Sin placa";
+    }
+
+    void ingresarDatos()
+    {
+        cout << "Ingrese el nombre de la conductora: ";
+        getline(cin, nombre);
+        cout << "Ingrese el modelo de su auto: ";
+        getline(cin, modeloAuto);
+        cout << "Ingrese la placa de su auto: ";
+        getline(cin, placaAuto);
+    }
+
+    void mostrarDatos()
+    {
+        cout << "Nombre: " << nombre << "\tModelo del auto: " << modeloAuto << "\tPlaca del auto: " << placaAuto << endl;
+    }
+};
